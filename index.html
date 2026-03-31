@@ -3,960 +3,867 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milad Raeisi - Software Developer & Project Manager</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Milad Raeisi - Senior Software Architect & AI/Blockchain Expert</title>
+    <meta name="description" content="Milad Raeisi - Senior Full-Stack Developer, AI & Machine Learning Specialist, Blockchain Architect, and Entrepreneur based in Oman.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#0f172a;--accent:#3b82f6;--accent2:#8b5cf6;
+            --accent3:#06b6d4;--accent4:#10b981;--accent5:#f59e0b;
+            --text:#e2e8f0;--text2:#94a3b8;--card:#1e293b;
+            --card-border:#334155;--radius:16px;
+        }
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--primary);color:var(--text);line-height:1.7;overflow-x:hidden}
+        ::selection{background:var(--accent);color:#fff}
+        ::-webkit-scrollbar{width:6px}
+        ::-webkit-scrollbar-track{background:var(--primary)}
+        ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        @media(min-width:768px){.container{padding:0 40px}}
+
+        @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(59,130,246,.2)}50%{box-shadow:0 0 40px rgba(59,130,246,.4)}}
+        @keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes scaleIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
+        .animate-fade-up{animation:fadeUp .7s ease forwards;opacity:0}
+        .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}
+        .delay-4{animation-delay:.4s}.delay-5{animation-delay:.5s}.delay-6{animation-delay:.6s}
+
+        /* Navigation */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .3s ease;padding:16px 0}
+        .nav.scrolled{background:rgba(15,23,42,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--card-border);padding:10px 0}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-0.5px;white-space:nowrap;flex-shrink:0}
+        .nav-links{display:none;gap:4px;flex-wrap:nowrap;align-items:center}
+        .nav-links a{color:var(--text2);text-decoration:none;font-size:.8rem;font-weight:500;padding:5px 10px;border-radius:8px;transition:all .3s;white-space:nowrap}
+        .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(59,130,246,.15)}
+        .nav-toggle{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001}
+        .nav-toggle span{width:24px;height:2px;background:var(--text);transition:all .3s;border-radius:2px}
+        .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .nav-toggle.active span:nth-child(2){opacity:0}
+        .nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+        .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,.98);backdrop-filter:blur(20px);z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+        .mobile-menu.active{display:flex}
+        .mobile-menu a{color:var(--text);text-decoration:none;font-size:1.2rem;font-weight:500;padding:12px 30px;border-radius:12px;transition:all .3s;width:80%;text-align:center}
+        .mobile-menu a:hover{background:rgba(59,130,246,.15);color:var(--accent)}
+        @media(min-width:768px){.nav-links{display:flex}.nav-toggle{display:none}}
+
+        /* Hero */
+        .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 0 60px}
+        .hero::before{content:'';position:absolute;top:-50%;right:-30%;width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,.08) 0%,transparent 70%);pointer-events:none}
+        .hero::after{content:'';position:absolute;bottom:-40%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.06) 0%,transparent 70%);pointer-events:none}
+        .hero-content{position:relative;z-index:1;width:100%}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);padding:8px 18px;border-radius:50px;font-size:.8rem;color:var(--accent);font-weight:500;margin-bottom:24px}
+        .hero-badge .dot{width:8px;height:8px;background:var(--accent4);border-radius:50%;animation:pulse-glow 2s infinite}
+        .hero h1{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:16px;letter-spacing:-1.5px}
+        .hero h1 .gradient{color:#fff}
+        .hero-subtitle{font-size:clamp(1rem,2.5vw,1.35rem);color:var(--text2);max-width:700px;margin-bottom:32px;font-weight:400}
+        .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:36px;max-width:600px}
+        @media(min-width:640px){.hero-stats{grid-template-columns:repeat(4,1fr)}}
+        .stat{text-align:center;padding:16px 8px}
+        .stat-num{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .stat-label{font-size:.75rem;color:var(--text2);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+        .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
+        .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(59,130,246,.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(59,130,246,.4)}
+        .btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}
+        .btn-outline:hover{border-color:var(--accent);color:var(--accent);background:rgba(59,130,246,.05)}
+        .contact-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px}
+        .contact-item{display:flex;align-items:center;gap:8px;color:var(--text2);font-size:.85rem}
+        .contact-item i{color:var(--accent);font-size:.9rem}
+        .contact-item a{color:var(--text2);text-decoration:none;transition:color .3s}
+        .contact-item a:hover{color:var(--accent)}
+
+        /* Section */
+        .section{padding:80px 0}
+        @media(max-width:767px){.section{padding:50px 0}}
+        .section-header{margin-bottom:48px}
+        .section-tag{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+        .section-tag i{font-size:.7rem}
+        .section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-1px;line-height:1.2}
+
+        /* Cards */
+        .card{background:linear-gradient(180deg,rgba(30,41,59,.95) 0%,rgba(30,41,59,.88) 100%);border:none;border-radius:var(--radius);padding:28px;transition:transform .3s ease,background .3s ease;position:relative;overflow:hidden}
+        .card:hover{transform:translateY(-4px);background:linear-gradient(180deg,rgba(51,65,85,.92) 0%,rgba(30,41,59,.9) 100%)}
+
+        /* Skills Grid */
+        .skills-grid{display:grid;grid-template-columns:1fr;gap:16px}
+        @media(min-width:640px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.skills-grid{grid-template-columns:repeat(3,1fr)}}
+        .skill-card{padding:24px}
+        .skill-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:16px}
+        .skill-card h3{font-size:1.05rem;font-weight:700;margin-bottom:12px}
+        .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+        .tag{padding:4px 10px;border-radius:6px;font-size:.72rem;font-weight:500;background:rgba(59,130,246,.1);color:var(--accent);border:1px solid rgba(59,130,246,.15)}
+        .tag.green{background:rgba(16,185,129,.1);color:var(--accent4);border-color:rgba(16,185,129,.15)}
+        .tag.purple{background:rgba(139,92,246,.1);color:var(--accent2);border-color:rgba(139,92,246,.15)}
+        .tag.cyan{background:rgba(6,182,212,.1);color:var(--accent3);border-color:rgba(6,182,212,.15)}
+        .tag.amber{background:rgba(245,158,11,.1);color:var(--accent5);border-color:rgba(245,158,11,.15)}
+        .tag.red{background:rgba(239,68,68,.1);color:#ef4444;border-color:rgba(239,68,68,.15)}
+
+        /* Timeline */
+        .timeline{position:relative;padding-left:0}
+        @media(min-width:768px){.timeline{padding-left:40px}}
+        .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2),var(--accent3));display:none}
+        @media(min-width:768px){.timeline::before{display:block}}
+        .timeline-item{position:relative;margin-bottom:24px}
+        .timeline-item::before{content:'';position:absolute;left:-47px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--primary);display:none}
+        @media(min-width:768px){.timeline-item::before{display:block}}
+        .exp-header{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
+        @media(min-width:640px){.exp-header{flex-direction:row;align-items:center;justify-content:space-between}}
+        .exp-role{font-size:1.15rem;font-weight:700;color:var(--accent)}
+        .exp-date{font-size:.8rem;color:var(--text2);font-weight:500;background:rgba(59,130,246,.1);padding:4px 12px;border-radius:6px;display:inline-block}
+        .exp-company{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:10px}
+        .exp-list{list-style:none;padding:0}
+        .exp-list li{position:relative;padding-left:20px;margin-bottom:8px;font-size:.88rem;color:var(--text2);line-height:1.6}
+        .exp-list li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+        /* Projects */
+        .projects-grid{display:grid;grid-template-columns:1fr;gap:20px}
+        @media(min-width:640px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.projects-grid{grid-template-columns:repeat(3,1fr)}}
+        .project-card{padding:0;overflow:hidden}
+        .project-top{padding:20px 24px;background:rgba(148,163,184,.06)}
+        .project-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:12px}
+        .project-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+        .project-card p{font-size:.82rem;color:var(--text2);line-height:1.5}
+        .project-bottom{padding:16px 24px;display:flex;flex-wrap:wrap;gap:6px}
+
+        /* Footer */
+        .footer{border-top:1px solid var(--card-border);padding:40px 0;margin-top:40px}
+        .footer-inner{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+        .footer-links{display:flex;gap:16px}
+        .footer-links a{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(148,163,184,.08);border:none;color:var(--text2);text-decoration:none;transition:all .3s}
+        .footer-links a:hover{background:rgba(59,130,246,.18);color:var(--accent);transform:translateY(-3px)}
+        .footer p{font-size:.8rem;color:var(--text2)}
+
+        .print-btn{position:fixed;bottom:24px;right:24px;z-index:100;width:48px;height:48px;border-radius:50%;background:rgba(148,163,184,.12);border:none;color:var(--text2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:1rem;text-decoration:none}
+        .print-btn:hover{background:var(--accent);color:#fff;transform:scale(1.1)}
+        .back-top{position:fixed;bottom:24px;right:80px;z-index:100;width:48px;height:48px;border-radius:50%;background:rgba(148,163,184,.12);border:none;color:var(--text2);display:none;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:1rem}
+        .back-top.visible{display:flex}
+        .back-top:hover{background:var(--accent);color:#fff;transform:scale(1.1)}
+
+        .icon-blue{background:rgba(59,130,246,.15);color:var(--accent)}
+        .icon-purple{background:rgba(139,92,246,.15);color:var(--accent2)}
+        .icon-cyan{background:rgba(6,182,212,.15);color:var(--accent3)}
+        .icon-green{background:rgba(16,185,129,.15);color:var(--accent4)}
+        .icon-amber{background:rgba(245,158,11,.15);color:var(--accent5)}
+        .icon-red{background:rgba(239,68,68,.15);color:#ef4444}
+        .icon-pink{background:rgba(236,72,153,.15);color:#ec4899}
+
+        .two-col{display:grid;grid-template-columns:1fr;gap:20px}
+        @media(min-width:768px){.two-col{grid-template-columns:1fr 1fr}}
+        .lang-bar{height:6px;border-radius:3px;background:var(--card-border);margin-top:8px;overflow:hidden}
+        .lang-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+        .highlight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+        @media(min-width:768px){.highlight-grid{grid-template-columns:repeat(4,1fr)}}
+        .highlight-item{background:rgba(59,130,246,.07);border:none;border-radius:12px;padding:16px;text-align:center;transition:all .3s}
+        .highlight-item:hover{background:rgba(59,130,246,.14)}
+        .highlight-item i{font-size:1.5rem;color:var(--accent);margin-bottom:8px;display:block}
+        .highlight-item span{font-size:.75rem;color:var(--text2);font-weight:500;display:block}
+
+        @media(max-width:640px){
+            .hero{min-height:auto;padding:100px 0 40px}
+            .hero h1{font-size:2rem}
+            .hero-subtitle{font-size:.95rem}
+            .hero-stats{gap:8px}
+            .stat{padding:12px 4px}
+            .stat-num{font-size:1.4rem}
+            .card{padding:20px}
+            .skill-card{padding:18px}
+            .section-title{font-size:1.5rem}
+            .contact-row{gap:12px;flex-direction:column}
+            .btn{padding:12px 20px;font-size:.85rem;width:100%;justify-content:center}
+            .hero-cta{flex-direction:column}
+            .project-top{padding:16px 18px}
+            .project-bottom{padding:12px 18px}
+            .highlight-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+            .highlight-item{padding:12px 8px}
+            .highlight-item i{font-size:1.2rem}
+        }
+
+        @media print{
+            body{background:#fff;color:#1f2937}
+            .nav,.mobile-menu,.print-btn,.back-top,.hero::before,.hero::after{display:none!important}
+            .card,.skill-card,.project-card{border:none;box-shadow:none;background:#fff}
+            .hero{min-height:auto;padding:20px 0}
+            .section{padding:20px 0}
+            *{color:#1f2937!important;-webkit-print-color-adjust:exact}
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Header Section -->
-    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="text-center md:text-left mb-6 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Milad Raeisi</h1>
-                    <p class="text-xl md:text-2xl text-blue-100 font-medium">Software Developer & Project Manager</p>
-                    <p class="text-lg text-blue-200 mt-2">Blockchain Expert • Full-Stack Developer • Entrepreneur</p>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <div class="nav-logo">Milad Raeisi</div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#ai">AI &amp; ML</a>
+                <a href="#blockchain">Blockchain</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#ai" onclick="toggleMenu()">AI &amp; ML</a>
+        <a href="#blockchain" onclick="toggleMenu()">Blockchain</a>
+        <a href="#projects" onclick="toggleMenu()">Projects</a>
+        <a href="#experience" onclick="toggleMenu()">Experience</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="about">
+        <div class="container hero-content">
+            <h1 class="animate-fade-up delay-1" style="color:#fff">Milad Raeisi</h1>
+            <p class="hero-subtitle animate-fade-up delay-2">
+                Senior Software Architect, AI/ML Specialist, Blockchain Expert, and Entrepreneur - building scalable enterprise systems, custom blockchains, and intelligent solutions across the MENA region and beyond.
+            </p>
+            <div class="hero-stats animate-fade-up delay-3">
+                <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Exp.</div></div>
+                <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Projects</div></div>
+                <div class="stat"><div class="stat-num">50+</div><div class="stat-label">AI Models</div></div>
+                <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Blockchains</div></div>
+            </div>
+            <div class="hero-cta animate-fade-up delay-4">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+                <a href="print.html" class="btn btn-outline"><i class="fas fa-file-alt"></i> Download CV</a>
+            </div>
+            <div class="contact-row animate-fade-up delay-5">
+                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+96891200634">+968 9120 0634</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:miladsoft@yahoo.com">miladsoft@yahoo.com</a></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Muscat, Oman</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-code"></i> Expertise</div>
+                <h2 class="section-title">Technical Skills &amp; Technologies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="card skill-card animate-fade-up">
+                    <div class="skill-icon icon-blue"><i class="fas fa-terminal"></i></div>
+                    <h3>Programming Languages</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Proficient in multiple paradigms - object-oriented, functional, and systems programming.</p>
+                    <div class="tags">
+                        <span class="tag">C#</span><span class="tag">Python</span><span class="tag">TypeScript</span>
+                        <span class="tag">JavaScript</span><span class="tag">Kotlin</span><span class="tag">Swift</span>
+                        <span class="tag">Rust</span><span class="tag">Dart</span><span class="tag">Java</span>
+                        <span class="tag">C++</span><span class="tag">Go</span><span class="tag">Solidity</span>
+                    </div>
                 </div>
-                <div class="text-center md:text-right space-y-3">
-                    <div class="flex items-center justify-center md:justify-end">
-                        <i class="fas fa-phone text-blue-200 mr-3"></i>
-                        <span class="text-lg">+968 9120 0634</span>
+                <div class="card skill-card animate-fade-up delay-1">
+                    <div class="skill-icon icon-cyan"><i class="fas fa-layer-group"></i></div>
+                    <h3>Frontend &amp; Frameworks</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Modern reactive UIs with SSR, static generation, and real-time capabilities.</p>
+                    <div class="tags">
+                        <span class="tag cyan">React</span><span class="tag cyan">Next.js</span><span class="tag cyan">Angular</span>
+                        <span class="tag cyan">Vue.js</span><span class="tag cyan">Nuxt.js</span><span class="tag cyan">Blazor</span>
+                        <span class="tag cyan">TailwindCSS</span><span class="tag cyan">SCSS</span><span class="tag cyan">Redux</span>
+                        <span class="tag cyan">Zustand</span><span class="tag cyan">Vite</span><span class="tag cyan">Webpack</span>
                     </div>
-                    <div class="flex items-center justify-center md:justify-end">
-                        <i class="fas fa-envelope text-blue-200 mr-3"></i>
-                        <a href="mailto:miladsoft@yahoo.com" class="text-lg hover:text-blue-200 transition-colors">miladsoft@yahoo.com</a>
+                </div>
+                <div class="card skill-card animate-fade-up delay-2">
+                    <div class="skill-icon icon-green"><i class="fas fa-server"></i></div>
+                    <h3>Backend &amp; APIs</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Scalable microservices, REST/GraphQL APIs, real-time systems, and enterprise backends.</p>
+                    <div class="tags">
+                        <span class="tag green">ASP.NET Core</span><span class="tag green">Node.js</span><span class="tag green">NestJS</span>
+                        <span class="tag green">Django</span><span class="tag green">FastAPI</span><span class="tag green">Express</span>
+                        <span class="tag green">GraphQL</span><span class="tag green">SignalR</span><span class="tag green">gRPC</span>
+                        <span class="tag green">Socket.io</span>
                     </div>
-                    <div class="flex items-center justify-center md:justify-end">
-                        <i class="fas fa-map-marker-alt text-blue-200 mr-3"></i>
-                        <span class="text-lg">Oman</span>
+                </div>
+                <div class="card skill-card animate-fade-up delay-3">
+                    <div class="skill-icon icon-amber"><i class="fas fa-database"></i></div>
+                    <h3>Databases &amp; Storage</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Relational, NoSQL, in-memory caching, and distributed data stores.</p>
+                    <div class="tags">
+                        <span class="tag amber">PostgreSQL</span><span class="tag amber">SQL Server</span><span class="tag amber">MongoDB</span>
+                        <span class="tag amber">Redis</span><span class="tag amber">Supabase</span><span class="tag amber">Firebase</span>
+                        <span class="tag amber">Elasticsearch</span><span class="tag amber">PocketBase</span><span class="tag amber">SQLite</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-4">
+                    <div class="skill-icon icon-purple"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud &amp; DevOps</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">IaC, container orchestration, CI/CD pipelines, and cloud-native architectures.</p>
+                    <div class="tags">
+                        <span class="tag purple">Docker</span><span class="tag purple">Kubernetes</span><span class="tag purple">AWS</span>
+                        <span class="tag purple">Azure</span><span class="tag purple">GCP</span><span class="tag purple">Terraform</span>
+                        <span class="tag purple">GitHub Actions</span><span class="tag purple">Jenkins</span><span class="tag purple">Nginx</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-5">
+                    <div class="skill-icon icon-pink"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile &amp; Desktop</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Native and cross-platform apps for iOS, Android, Windows, macOS, and Linux.</p>
+                    <div class="tags">
+                        <span class="tag red">React Native</span><span class="tag red">Flutter</span><span class="tag red">.NET MAUI</span>
+                        <span class="tag red">Electron</span><span class="tag red">Tauri</span><span class="tag red">SwiftUI</span>
+                        <span class="tag red">Jetpack Compose</span><span class="tag red">WPF</span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="container mx-auto px-6 py-12">
-        <!-- Professional Summary -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">Professional Summary</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                    ✨ Passionate software architect and full-stack developer with over a decade of expertise in building scalable applications across web, mobile, and desktop platforms. Specialized in cutting-edge technologies including blockchain development, decentralized systems, artificial intelligence, and modern UI/UX design.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                    Proven expertise in <strong>Blockchain Technology</strong> with deep knowledge of Bitcoin, Lightning Network, Nostr Protocol, and decentralized identity systems. As a core contributor to <strong>Blockcore</strong>, I bring extensive experience in building custom blockchain solutions from the ground up.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                    Accomplished entrepreneur with a strong track record of founding and leading successful technology companies. Founder & CEO of <strong>SBC (Senior BlockChain LLC)</strong> - a Grade 1 company in Oman, and Founder & Owner of <strong>BMS Company</strong> in Iran, demonstrating leadership in both technical innovation and business development.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700">
-                    Technical mastery spans <strong>Software Architecture</strong> (.NET, C#, TypeScript, Python), <strong>Modern Frameworks</strong> (React, Angular, Next.js), <strong>AI & Data Science</strong>, and <strong>Creative Design</strong> (Figma, Photoshop, After Effects). Committed to building open-source solutions that drive technological advancement and positive societal impact.
+    <!-- AI & Machine Learning -->
+    <section class="section" id="ai" style="background:linear-gradient(180deg,rgba(139,92,246,.03) 0%,transparent 100%)">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-brain"></i> Artificial Intelligence</div>
+                <h2 class="section-title">AI &amp; Machine Learning Expertise</h2>
+            </div>
+            <div class="card animate-fade-up" style="margin-bottom:28px">
+                <p style="font-size:.95rem;color:var(--text2);line-height:1.8">
+                    Specialized in designing, training, and deploying production-grade AI/ML models - from natural language processing and computer vision to predictive analytics and generative AI. Building intelligent systems that transform raw data into actionable business insights across healthcare, insurance, fintech, and e-commerce domains.
                 </p>
             </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">Technical Skills</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Programming Languages</h3>
-                        <div class="space-y-2">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">C#</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">ASP.NET</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">.NET</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Kotlin</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Angular</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">React</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Blazor</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Blockchain & Web3</h3>
-                        <div class="space-y-2">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Bitcoin</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Lightning Network</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Nostr Protocol</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">PSBT</span>
-                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Smart Contracts</span>
-                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">DeFi</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Decentralized Identity</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Web3</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Design & Creative</h3>
-                        <div class="space-y-2">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">UI/UX Design</span>
-                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Figma</span>
-                                <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Adobe Photoshop</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">After Effects</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">CorelDRAW</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Video Production</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Branding</span>
-                                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Visual Identity</span>
-                            </div>
-                        </div>
+            <div class="skills-grid">
+                <div class="card skill-card animate-fade-up">
+                    <div class="skill-icon icon-purple"><i class="fas fa-brain"></i></div>
+                    <h3>Deep Learning &amp; Neural Networks</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Custom architectures for classification, detection, segmentation, and generative tasks.</p>
+                    <div class="tags">
+                        <span class="tag purple">TensorFlow</span><span class="tag purple">PyTorch</span><span class="tag purple">Keras</span>
+                        <span class="tag purple">CNNs</span><span class="tag purple">RNNs</span><span class="tag purple">Transformers</span>
+                        <span class="tag purple">GANs</span><span class="tag purple">U-Net</span>
                     </div>
                 </div>
-
-                <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Platforms & Frameworks</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Web:</h4>
-                                <p class="text-gray-600 text-sm">ASP.NET, Angular, React, Next.js, TailwindCSS, APIs</p>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Mobile:</h4>
-                                <p class="text-gray-600 text-sm">React Native, Flutter, Kotlin</p>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Desktop:</h4>
-                                <p class="text-gray-600 text-sm">Windows, Linux, macOS</p>
-                            </div>
-                        </div>
+                <div class="card skill-card animate-fade-up delay-1">
+                    <div class="skill-icon icon-cyan"><i class="fas fa-language"></i></div>
+                    <h3>NLP &amp; Large Language Models</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Fine-tuning LLMs, building RAG systems, chatbots, and document analysis pipelines.</p>
+                    <div class="tags">
+                        <span class="tag cyan">GPT / LLM Fine-tuning</span><span class="tag cyan">LangChain</span>
+                        <span class="tag cyan">RAG</span><span class="tag cyan">Hugging Face</span>
+                        <span class="tag cyan">BERT</span><span class="tag cyan">Prompt Engineering</span>
                     </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">AI & Data Science</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">AI Technologies:</h4>
-                                <p class="text-gray-600 text-sm">Machine Learning, Data-driven Applications, Intelligent Systems</p>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Databases:</h4>
-                                <p class="text-gray-600 text-sm">SQL Server, Supabase, Firestore, PocketBase</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-2">
+                    <div class="skill-icon icon-green"><i class="fas fa-eye"></i></div>
+                    <h3>Computer Vision</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Object detection, image segmentation, OCR, facial recognition, and video analysis.</p>
+                    <div class="tags">
+                        <span class="tag green">OpenCV</span><span class="tag green">YOLO</span><span class="tag green">MediaPipe</span>
+                        <span class="tag green">OCR</span><span class="tag green">Image Segmentation</span>
+                        <span class="tag green">Face Recognition</span>
                     </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">ERP & Business Systems</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Odoo Development:</h4>
-                                <p class="text-gray-600 text-sm">Custom Module Development, Python Integration, Business Logic Implementation</p>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">ERP Solutions:</h4>
-                                <p class="text-gray-600 text-sm">Enterprise Resource Planning, Business Process Automation, System Integration</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-3">
+                    <div class="skill-icon icon-amber"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Science &amp; Analytics</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Predictive modeling, statistical analysis, time-series forecasting, and BI dashboards.</p>
+                    <div class="tags">
+                        <span class="tag amber">Pandas</span><span class="tag amber">NumPy</span><span class="tag amber">Scikit-learn</span>
+                        <span class="tag amber">XGBoost</span><span class="tag amber">Matplotlib</span>
+                        <span class="tag amber">Jupyter</span><span class="tag amber">Power BI</span>
                     </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Management & Methodology</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Project Management:</h4>
-                                <p class="text-gray-600 text-sm">Agile, Scrum, Team Leadership</p>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800 mb-2">Architecture:</h4>
-                                <p class="text-gray-600 text-sm">Software Architecture, Full-stack Development, System Design</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-4">
+                    <div class="skill-icon icon-blue"><i class="fas fa-robot"></i></div>
+                    <h3>MLOps &amp; Model Deployment</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">End-to-end ML pipelines, model serving, monitoring, and A/B testing in production.</p>
+                    <div class="tags">
+                        <span class="tag">MLflow</span><span class="tag">Docker</span><span class="tag">FastAPI</span>
+                        <span class="tag">ONNX</span><span class="tag">TensorRT</span>
+                        <span class="tag">AWS SageMaker</span><span class="tag">Vertex AI</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-5">
+                    <div class="skill-icon icon-red"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3>Generative AI &amp; Automation</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">AI-powered content generators, code assistants, and intelligent automation systems.</p>
+                    <div class="tags">
+                        <span class="tag red">Stable Diffusion</span><span class="tag red">ComfyUI</span>
+                        <span class="tag red">AI Agents</span><span class="tag red">AutoML</span>
+                        <span class="tag red">Reinforcement Learning</span><span class="tag red">AI Chatbots</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Currently Building -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">🔨 Currently Building</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-3 flex items-center">
-                            <i class="fas fa-rocket mr-2"></i>
-                            Angor
-                        </h3>
-                        <p class="text-gray-700 mb-3">Decentralized Bitcoin crowdfunding platform empowering creators and investors through Bitcoin's decentralized network.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs font-medium">Bitcoin</span>
-                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs font-medium">Crowdfunding</span>
-                            <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded text-xs font-medium">DeFi</span>
-                        </div>
+    <!-- Blockchain -->
+    <section class="section" id="blockchain">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-link"></i> Blockchain</div>
+                <h2 class="section-title">Blockchain &amp; Web3 Architecture</h2>
+            </div>
+            <div class="card animate-fade-up" style="margin-bottom:28px">
+                <p style="font-size:.95rem;color:var(--text2);line-height:1.8">
+                    Core contributor to <strong style="color:var(--accent)">Blockcore</strong> - building custom blockchains from scratch. Deep expertise in Bitcoin protocol, Lightning Network, Nostr, decentralized identity, smart contracts, and DeFi. Architecting private and public blockchain networks for government and enterprise clients, including custom consensus mechanisms, tokenization platforms, and cross-chain interoperability solutions.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="card skill-card animate-fade-up">
+                    <div class="skill-icon icon-amber"><i class="fab fa-bitcoin"></i></div>
+                    <h3>Custom Blockchain Development</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Building blockchains from ground up - custom consensus, node architecture, P2P networking.</p>
+                    <div class="tags">
+                        <span class="tag amber">Blockcore</span><span class="tag amber">PoS / PoW</span><span class="tag amber">Custom Chains</span>
+                        <span class="tag amber">Node Development</span><span class="tag amber">P2P Networks</span>
+                        <span class="tag amber">Block Explorer</span>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold text-purple-700 mb-3 flex items-center">
-                            <i class="fas fa-shield-alt mr-2"></i>
-                            SeniorBlockchain Platform
-                        </h3>
-                        <p class="text-gray-700 mb-3">Decentralizing identity for a better, more secure future through innovative blockchain technology.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs font-medium">Identity</span>
-                            <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs font-medium">Security</span>
-                            <span class="bg-purple-200 text-purple-800 px-2 py-1 rounded text-xs font-medium">Web3</span>
-                        </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-1">
+                    <div class="skill-icon icon-blue"><i class="fas fa-bolt"></i></div>
+                    <h3>Bitcoin &amp; Lightning Network</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">PSBT transactions, multi-sig wallets, payment channels, and Lightning micropayments.</p>
+                    <div class="tags">
+                        <span class="tag">Bitcoin Core</span><span class="tag">Lightning</span><span class="tag">PSBT</span>
+                        <span class="tag">Taproot</span><span class="tag">Multi-Sig</span><span class="tag">HD Wallets</span>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold text-green-700 mb-3 flex items-center">
-                            <i class="fas fa-code-branch mr-2"></i>
-                            Open-Source Contributions
-                        </h3>
-                        <p class="text-gray-700 mb-3">Contributing to the blockchain ecosystem and building projects that empower society and inspire positive change.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs font-medium">Blockchain</span>
-                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs font-medium">Open Source</span>
-                            <span class="bg-green-200 text-green-800 px-2 py-1 rounded text-xs font-medium">Community</span>
-                        </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-2">
+                    <div class="skill-icon icon-purple"><i class="fas fa-file-contract"></i></div>
+                    <h3>Smart Contracts &amp; DeFi</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Solidity development, DeFi protocols, token standards, auditing, and AMM architectures.</p>
+                    <div class="tags">
+                        <span class="tag purple">Solidity</span><span class="tag purple">ERC-20/721</span><span class="tag purple">DeFi</span>
+                        <span class="tag purple">DEX</span><span class="tag purple">AMMs</span>
+                        <span class="tag purple">Hardhat</span><span class="tag purple">Web3.js</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-3">
+                    <div class="skill-icon icon-green"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Decentralized Identity (DID)</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Self-sovereign identity, verifiable credentials, and decentralized PKI systems.</p>
+                    <div class="tags">
+                        <span class="tag green">Nostr Protocol</span><span class="tag green">DID</span><span class="tag green">W3C VC</span>
+                        <span class="tag green">Self-Sovereign ID</span><span class="tag green">PKI</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-4">
+                    <div class="skill-icon icon-cyan"><i class="fas fa-coins"></i></div>
+                    <h3>Tokenization &amp; NFTs</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Asset tokenization, fractional ownership, NFT marketplaces, and RWA platforms.</p>
+                    <div class="tags">
+                        <span class="tag cyan">Tokenization</span><span class="tag cyan">NFT Standards</span><span class="tag cyan">RWA</span>
+                        <span class="tag cyan">Fractional Ownership</span><span class="tag cyan">Marketplace</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-5">
+                    <div class="skill-icon icon-red"><i class="fas fa-network-wired"></i></div>
+                    <h3>Enterprise Blockchain Solutions</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Private/consortium chains, supply-chain tracking, government digital currency, and compliance.</p>
+                    <div class="tags">
+                        <span class="tag red">Private Chains</span><span class="tag red">Hyperledger</span>
+                        <span class="tag red">Supply Chain</span><span class="tag red">CBDC</span>
+                        <span class="tag red">Compliance</span><span class="tag red">KYC/AML</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Odoo ERP Development Expertise -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">🔧 Odoo ERP Development Expertise</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="mb-6">
-                    <p class="text-lg text-gray-700 mb-4">
-                        Extensive experience in developing and customizing <strong>Odoo ERP modules</strong> using Python, delivering comprehensive business solutions that streamline operations and enhance organizational efficiency across multiple industries.
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Core Business Modules -->
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-blue-700 mb-3 flex items-center">
-                            <i class="fas fa-building mr-2"></i>
-                            Core Business Modules
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Sales Management:</strong> Custom quotation workflows, pricing rules, commission structures</li>
-                            <li>• <strong>Purchase Management:</strong> Vendor evaluation, automated procurement, approval workflows</li>
-                            <li>• <strong>Inventory Management:</strong> Multi-location stock control, barcode integration, lot tracking</li>
-                            <li>• <strong>Accounting & Finance:</strong> Custom chart of accounts, automated reconciliation, financial reporting</li>
-                        </ul>
-                    </div>
-
-                    <!-- HR & Project Management -->
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-green-700 mb-3 flex items-center">
-                            <i class="fas fa-users mr-2"></i>
-                            HR & Project Management
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Human Resources:</strong> Employee lifecycle management, payroll integration, performance tracking</li>
-                            <li>• <strong>Project Management:</strong> Task automation, time tracking, resource allocation, Gantt charts</li>
-                            <li>• <strong>Timesheet Management:</strong> Automated time capture, project billing, productivity analytics</li>
-                            <li>• <strong>Recruitment:</strong> Applicant tracking system, interview scheduling, candidate evaluation</li>
-                        </ul>
-                    </div>
-
-                    <!-- Manufacturing & Production -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-purple-700 mb-3 flex items-center">
-                            <i class="fas fa-cogs mr-2"></i>
-                            Manufacturing & Production
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Manufacturing Orders:</strong> Production planning, work center management, quality control</li>
-                            <li>• <strong>Bill of Materials:</strong> Multi-level BOM, variant management, cost calculation</li>
-                            <li>• <strong>Quality Management:</strong> Quality points, control plans, non-conformity tracking</li>
-                            <li>• <strong>Maintenance:</strong> Preventive maintenance scheduling, equipment tracking, repair workflows</li>
-                        </ul>
-                    </div>
-
-                    <!-- CRM & Marketing -->
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-orange-700 mb-3 flex items-center">
-                            <i class="fas fa-chart-line mr-2"></i>
-                            CRM & Marketing
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Customer Relationship:</strong> Lead scoring, opportunity pipeline, customer segmentation</li>
-                            <li>• <strong>Marketing Automation:</strong> Email campaigns, social media integration, analytics</li>
-                            <li>• <strong>Helpdesk & Support:</strong> Ticket management, SLA tracking, customer portal integration</li>
-                            <li>• <strong>E-commerce Integration:</strong> Online store sync, payment gateways, shipping management</li>
-                        </ul>
-                    </div>
-
-                    <!-- Custom Industry Solutions -->
-                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-red-700 mb-3 flex items-center">
-                            <i class="fas fa-industry mr-2"></i>
-                            Custom Industry Solutions
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Healthcare Management:</strong> Patient records, appointment scheduling, medical billing</li>
-                            <li>• <strong>Educational Institutions:</strong> Student management, course planning, fee collection</li>
-                            <li>• <strong>Real Estate:</strong> Property management, lease tracking, maintenance requests</li>
-                            <li>• <strong>Construction:</strong> Project costing, subcontractor management, progress tracking</li>
-                        </ul>
-                    </div>
-
-                    <!-- Technical Architecture -->
-                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-teal-700 mb-3 flex items-center">
-                            <i class="fas fa-code mr-2"></i>
-                            Technical Architecture
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Python Development:</strong> ORM models, business logic, automated workflows</li>
-                            <li>• <strong>API Integration:</strong> REST APIs, third-party system integration, data synchronization</li>
-                            <li>• <strong>Report Development:</strong> Custom reports, QWeb templates, dashboard creation</li>
-                            <li>• <strong>Database Optimization:</strong> Query optimization, index management, performance tuning</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Technical Capabilities -->
-                <div class="mt-8 bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">🛠️ Technical Capabilities & Methodologies</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Development Expertise:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python/ORM</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">XML Views</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">QWeb Reports</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript/OWL</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST APIs</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Implementation Approach:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Agile Development</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Module Architecture</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Data Migration</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">System Integration</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Performance Optimization</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">User Training</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Featured Projects -->
+    <section class="section" id="projects" style="background:linear-gradient(180deg,rgba(59,130,246,.03) 0%,transparent 100%)">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-rocket"></i> Portfolio</div>
+                <h2 class="section-title">Featured Projects</h2>
             </div>
-        </section>
-
-        <!-- Mobile Application Development -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-green-600 pb-2">📱 Mobile Application Development</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="mb-6">
-                    <p class="text-lg text-gray-700 mb-4">
-                        Comprehensive expertise in developing native and cross-platform mobile applications for <strong>Android and iOS</strong> platforms, utilizing modern frameworks and technologies to deliver high-performance, user-centric mobile solutions.
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Android Development -->
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-green-700 mb-3 flex items-center">
-                            <i class="fab fa-android mr-2"></i>
-                            Android Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Native Development:</strong> Kotlin, Java, Android SDK, Jetpack Compose</li>
-                            <li>• <strong>Architecture Patterns:</strong> MVVM, MVP, Clean Architecture, Repository Pattern</li>
-                            <li>• <strong>UI/UX Implementation:</strong> Material Design, Custom Views, Animations, Responsive Layouts</li>
-                            <li>• <strong>Data Management:</strong> Room Database, SQLite, SharedPreferences, DataStore</li>
-                            <li>• <strong>Networking:</strong> Retrofit, OkHttp, REST APIs, GraphQL integration</li>
-                        </ul>
-                    </div>
-
-                    <!-- iOS Development -->
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-blue-700 mb-3 flex items-center">
-                            <i class="fab fa-apple mr-2"></i>
-                            iOS Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Native Development:</strong> Swift, Objective-C, iOS SDK, SwiftUI</li>
-                            <li>• <strong>Architecture:</strong> MVC, MVVM, VIPER, Coordinator Pattern</li>
-                            <li>• <strong>UI Framework:</strong> UIKit, SwiftUI, Auto Layout, Human Interface Guidelines</li>
-                            <li>• <strong>Data Persistence:</strong> Core Data, SQLite, UserDefaults, Keychain Services</li>
-                            <li>• <strong>Networking:</strong> URLSession, Alamofire, RESTful services, JSON parsing</li>
-                        </ul>
-                    </div>
-
-                    <!-- Cross-Platform Development -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-purple-700 mb-3 flex items-center">
-                            <i class="fas fa-mobile-alt mr-2"></i>
-                            Cross-Platform Solutions
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>React Native:</strong> Redux, React Navigation, Native Modules, Performance Optimization</li>
-                            <li>• <strong>Flutter:</strong> Dart, Widget Architecture, State Management (Bloc, Provider)</li>
-                            <li>• <strong>Hybrid Frameworks:</strong> Cordova, PhoneGap, Ionic for rapid prototyping</li>
-                            <li>• <strong>Code Sharing:</strong> Shared business logic, platform-specific UI implementations</li>
-                            <li>• <strong>Performance:</strong> Native bridge optimization, memory management</li>
-                        </ul>
-                    </div>
-
-                    <!-- Advanced Features -->
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-orange-700 mb-3 flex items-center">
-                            <i class="fas fa-star mr-2"></i>
-                            Advanced Features
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Real-time Communication:</strong> WebSocket, Socket.io, Firebase Realtime Database</li>
-                            <li>• <strong>Push Notifications:</strong> FCM, APNs, local notifications, rich media</li>
-                            <li>• <strong>Geolocation Services:</strong> GPS, Maps integration, Location-based features</li>
-                            <li>• <strong>Camera & Media:</strong> Camera integration, image processing, video recording</li>
-                            <li>• <strong>Biometric Authentication:</strong> Fingerprint, Face ID, Touch ID integration</li>
-                        </ul>
-                    </div>
-
-                    <!-- Backend Integration -->
-                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-red-700 mb-3 flex items-center">
-                            <i class="fas fa-server mr-2"></i>
-                            Backend Integration
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Cloud Services:</strong> Firebase, AWS Mobile Hub, Azure Mobile Apps</li>
-                            <li>• <strong>Authentication:</strong> OAuth, JWT, Social login (Google, Facebook, Apple)</li>
-                            <li>• <strong>Analytics:</strong> Google Analytics, Firebase Analytics, Crashlytics</li>
-                            <li>• <strong>Payment Integration:</strong> Stripe, PayPal, In-app purchases, Google Pay</li>
-                            <li>• <strong>Offline Sync:</strong> Local caching, data synchronization, conflict resolution</li>
-                        </ul>
-                    </div>
-
-                    <!-- Testing & Deployment -->
-                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-teal-700 mb-3 flex items-center">
-                            <i class="fas fa-vial mr-2"></i>
-                            Testing & Deployment
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Testing Frameworks:</strong> XCTest, Espresso, Jest, Detox for E2E testing</li>
-                            <li>• <strong>CI/CD Pipelines:</strong> Fastlane, GitHub Actions, Jenkins, automated builds</li>
-                            <li>• <strong>App Store Optimization:</strong> ASO strategies, metadata optimization</li>
-                            <li>• <strong>Beta Testing:</strong> TestFlight, Firebase App Distribution, internal testing</li>
-                            <li>• <strong>Performance Monitoring:</strong> Crashlytics, New Relic, application performance tuning</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Technical Stack -->
-                <div class="mt-8 bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">📱 Mobile Development Stack & Tools</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Programming Languages:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Kotlin</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Swift</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Java</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Dart</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Frameworks & Tools:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React Native</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Flutter</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Xamarin</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Ionic</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Android Studio</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Xcode</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Specializations:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">UI/UX Implementation</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Performance Optimization</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Security Implementation</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">App Store Publishing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Web Development Expertise -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-orange-600 pb-2">🌐 Web Development Expertise</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="mb-6">
-                    <p class="text-lg text-gray-700 mb-4">
-                        Full-stack web development expertise spanning <strong>modern frontend frameworks</strong>, <strong>robust backend systems</strong>, and <strong>scalable cloud architectures</strong>. Specialized in creating responsive, high-performance web applications and enterprise solutions.
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Frontend Development -->
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-blue-700 mb-3 flex items-center">
-                            <i class="fas fa-palette mr-2"></i>
-                            Frontend Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Modern Frameworks:</strong> React, Angular, Vue.js, Next.js, Nuxt.js</li>
-                            <li>• <strong>JavaScript/TypeScript:</strong> ES6+, TypeScript, Modern JS patterns, async/await</li>
-                            <li>• <strong>CSS Technologies:</strong> TailwindCSS, SCSS, Styled Components, CSS-in-JS</li>
-                            <li>• <strong>State Management:</strong> Redux, MobX, Vuex, Context API, Zustand</li>
-                            <li>• <strong>Build Tools:</strong> Webpack, Vite, Parcel, Rollup, Babel transpilation</li>
-                        </ul>
-                    </div>
-
-                    <!-- Backend Development -->
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-green-700 mb-3 flex items-center">
-                            <i class="fas fa-server mr-2"></i>
-                            Backend Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>.NET Ecosystem:</strong> ASP.NET Core, Web API, Entity Framework, SignalR</li>
-                            <li>• <strong>Node.js Stack:</strong> Express.js, NestJS, Fastify, GraphQL, Socket.io</li>
-                            <li>• <strong>Python Frameworks:</strong> Django, FastAPI, Flask, SQLAlchemy ORM</li>
-                            <li>• <strong>Database Systems:</strong> SQL Server, PostgreSQL, MongoDB, Redis caching</li>
-                            <li>• <strong>Authentication:</strong> JWT, OAuth 2.0, Identity Server, Multi-factor authentication</li>
-                        </ul>
-                    </div>
-
-                    <!-- Cloud & DevOps -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-purple-700 mb-3 flex items-center">
-                            <i class="fas fa-cloud mr-2"></i>
-                            Cloud & DevOps
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Cloud Platforms:</strong> Azure, AWS, Google Cloud, Firebase Hosting</li>
-                            <li>• <strong>Containerization:</strong> Docker, Kubernetes, Docker Compose, Microservices</li>
-                            <li>• <strong>CI/CD Pipelines:</strong> GitHub Actions, Azure DevOps, Jenkins, GitLab CI</li>
-                            <li>• <strong>Infrastructure:</strong> Terraform, ARM templates, Infrastructure as Code</li>
-                            <li>• <strong>Monitoring:</strong> Application Insights, ELK Stack, Prometheus, Grafana</li>
-                        </ul>
-                    </div>
-
-                    <!-- API Development -->
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-orange-700 mb-3 flex items-center">
-                            <i class="fas fa-exchange-alt mr-2"></i>
-                            API Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>RESTful APIs:</strong> REST principles, OpenAPI/Swagger documentation</li>
-                            <li>• <strong>GraphQL:</strong> Schema design, resolvers, Apollo Server, relay connections</li>
-                            <li>• <strong>Real-time APIs:</strong> WebSocket, Server-Sent Events, SignalR hubs</li>
-                            <li>• <strong>API Security:</strong> Rate limiting, CORS, API versioning, input validation</li>
-                            <li>• <strong>Integration:</strong> Third-party APIs, payment gateways, social media APIs</li>
-                        </ul>
-                    </div>
-
-                    <!-- E-commerce & CMS -->
-                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-red-700 mb-3 flex items-center">
-                            <i class="fas fa-shopping-cart mr-2"></i>
-                            E-commerce & CMS
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>E-commerce Platforms:</strong> Custom shopping carts, payment processing, inventory</li>
-                            <li>• <strong>Content Management:</strong> Headless CMS, WordPress customization, Strapi</li>
-                            <li>• <strong>Payment Integration:</strong> Stripe, PayPal, Square, cryptocurrency payments</li>
-                            <li>• <strong>SEO Optimization:</strong> Meta tags, structured data, sitemap generation</li>
-                            <li>• <strong>Performance:</strong> CDN integration, caching strategies, image optimization</li>
-                        </ul>
-                    </div>
-
-                    <!-- Security & Performance -->
-                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-teal-700 mb-3 flex items-center">
-                            <i class="fas fa-shield-alt mr-2"></i>
-                            Security & Performance
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Web Security:</strong> HTTPS, CSP, XSS protection, SQL injection prevention</li>
-                            <li>• <strong>Performance Optimization:</strong> Code splitting, lazy loading, bundle optimization</li>
-                            <li>• <strong>Testing:</strong> Unit testing, Integration testing, E2E testing (Cypress, Playwright)</li>
-                            <li>• <strong>Accessibility:</strong> WCAG compliance, screen reader compatibility, keyboard navigation</li>
-                            <li>• <strong>Progressive Web Apps:</strong> Service workers, offline functionality, push notifications</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Web Technologies Stack -->
-                <div class="mt-8 bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">🌐 Web Development Technology Stack</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Frontend Technologies:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Angular</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Vue.js</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Backend Technologies:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Node.js</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">GraphQL</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">RESTful APIs</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Microservices</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Development Approach:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Responsive Design</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Progressive Web Apps</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Agile Development</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Test-Driven Development</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Desktop Application Development -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-indigo-600 pb-2">🖥️ Desktop Application Development</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="mb-6">
-                    <p class="text-lg text-gray-700 mb-4">
-                        Comprehensive expertise in developing <strong>cross-platform desktop applications</strong> for Windows, macOS, and Linux. Specialized in creating high-performance, native-feeling applications using modern frameworks and traditional desktop technologies.
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- .NET Desktop Development -->
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-blue-700 mb-3 flex items-center">
-                            <i class="fab fa-microsoft mr-2"></i>
-                            .NET Desktop Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>WPF Applications:</strong> XAML, MVVM pattern, Data binding, Custom controls</li>
-                            <li>• <strong>WinForms:</strong> Legacy application modernization, custom UI components</li>
-                            <li>• <strong>.NET MAUI:</strong> Cross-platform development, shared UI, platform-specific features</li>
-                            <li>• <strong>UWP/WinUI:</strong> Universal Windows Platform, modern Windows applications</li>
-                            <li>• <strong>Entity Framework:</strong> Database integration, ORM patterns, data management</li>
-                        </ul>
-                    </div>
-
-                    <!-- Cross-Platform Frameworks -->
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-green-700 mb-3 flex items-center">
-                            <i class="fas fa-desktop mr-2"></i>
-                            Cross-Platform Frameworks
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Electron:</strong> Web technologies for desktop, Node.js integration, native APIs</li>
-                            <li>• <strong>Tauri:</strong> Rust-based framework, lightweight applications, security-focused</li>
-                            <li>• <strong>Qt Framework:</strong> C++ development, cross-platform GUI, high performance</li>
-                            <li>• <strong>Flutter Desktop:</strong> Dart language, consistent UI across platforms</li>
-                            <li>• <strong>JavaFX:</strong> Rich client applications, modern Java UI toolkit</li>
-                        </ul>
-                    </div>
-
-                    <!-- Native Platform Development -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-purple-700 mb-3 flex items-center">
-                            <i class="fas fa-code mr-2"></i>
-                            Native Platform Development
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Windows Native:</strong> Win32 API, COM components, Windows Services</li>
-                            <li>• <strong>macOS Development:</strong> Cocoa, Swift for Mac, Objective-C, Xcode</li>
-                            <li>• <strong>Linux Development:</strong> GTK+, KDE/Qt, command-line utilities</li>
-                            <li>• <strong>System Integration:</strong> Registry access, file system operations, hardware APIs</li>
-                            <li>• <strong>Performance Optimization:</strong> Memory management, multi-threading, native code</li>
-                        </ul>
-                    </div>
-
-                    <!-- Enterprise Desktop Solutions -->
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-orange-700 mb-3 flex items-center">
-                            <i class="fas fa-building mr-2"></i>
-                            Enterprise Desktop Solutions
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Business Applications:</strong> ERP clients, CRM software, inventory management</li>
-                            <li>• <strong>Database Applications:</strong> SQL Server integration, data visualization, reporting</li>
-                            <li>• <strong>Office Integration:</strong> Microsoft Office add-ins, document automation</li>
-                            <li>• <strong>Network Applications:</strong> Client-server architecture, TCP/UDP communication</li>
-                            <li>• <strong>Security Features:</strong> Encryption, user authentication, secure data storage</li>
-                        </ul>
-                    </div>
-
-                    <!-- Specialized Desktop Apps -->
-                    <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-red-700 mb-3 flex items-center">
-                            <i class="fas fa-tools mr-2"></i>
-                            Specialized Applications
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Media Applications:</strong> Image/video processing, multimedia playback, codecs</li>
-                            <li>• <strong>System Utilities:</strong> File managers, system monitors, automation tools</li>
-                            <li>• <strong>Development Tools:</strong> Code editors, IDEs, debugging utilities</li>
-                            <li>• <strong>Scientific Software:</strong> Data analysis, mathematical computing, visualization</li>
-                            <li>• <strong>Gaming Applications:</strong> Game engines, graphics programming, DirectX/OpenGL</li>
-                        </ul>
-                    </div>
-
-                    <!-- Deployment & Distribution -->
-                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-6">
-                        <h3 class="text-lg font-semibold text-teal-700 mb-3 flex items-center">
-                            <i class="fas fa-rocket mr-2"></i>
-                            Deployment & Distribution
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>• <strong>Windows Deployment:</strong> MSI packages, ClickOnce, Windows Store distribution</li>
-                            <li>• <strong>macOS Distribution:</strong> App Store, DMG packages, notarization, code signing</li>
-                            <li>• <strong>Linux Packages:</strong> AppImage, Snap packages, Flatpak, repository distribution</li>
-                            <li>• <strong>Auto-Updates:</strong> Automatic update mechanisms, version management</li>
-                            <li>• <strong>Installation:</strong> Custom installers, dependency management, silent installation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Desktop Development Stack -->
-                <div class="mt-8 bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">🖥️ Desktop Development Technology Stack</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Programming Languages:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C++</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Java</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swift</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Rust</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Frameworks & Platforms:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">.NET/WPF</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Electron</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Qt</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Tauri</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Flutter Desktop</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">.NET MAUI</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-3">Specializations:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Cross-Platform Development</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Enterprise Solutions</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">System Integration</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Performance Optimization</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Experience -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">Professional Experience</h2>
-            <div class="space-y-8">
-                <!-- SBC (Senior BlockChain LLC) -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-blue-600">Founder & CEO</h3>
-                        <span class="text-lg text-gray-600 font-medium">2022 – Present</span>
-                    </div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">SBC (Senior BlockChain LLC) - Grade 1 Company, Oman</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Founded and leading a Grade 1 blockchain technology company in Oman.</li>
-                        <li>Providing enterprise blockchain solutions and consulting services.</li>
-                        <li>Managing strategic partnerships and business development in the MENA region.</li>
-                        <li>Overseeing development of cutting-edge blockchain applications and platforms.</li>
-                    </ul>
-                </div>
-
+            <div class="projects-grid">
                 <!-- Angor -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-blue-600">Lead Developer</h3>
-                        <span class="text-lg text-gray-600 font-medium">2022 – Present</span>
+                <div class="card project-card animate-fade-up">
+                    <div class="project-top">
+                        <div class="project-icon icon-blue"><i class="fas fa-rocket"></i></div>
+                        <h3>Angor - Decentralized Crowdfunding</h3>
+                        <p>Bitcoin-based decentralized crowdfunding platform with Nostr protocol integration, Lightning payments, and PSBT-based smart escrow for trustless investment workflows.</p>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Angor</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Designed and developed a decentralized crowdfunding platform integrating Bitcoin and Nostr protocol.</li>
-                        <li>Led all aspects of the project including UI/UX design, advanced coding, documentation, branding, and marketing.</li>
-                        <li>Implemented Lightning Network payments, decentralized data storage, and blockchain-based identity systems.</li>
-                    </ul>
+                    <div class="project-bottom">
+                        <span class="tag">Bitcoin</span><span class="tag cyan">Nostr</span><span class="tag amber">Lightning</span>
+                        <span class="tag purple">DeFi</span><span class="tag green">Angular</span>
+                    </div>
                 </div>
-
-                <!-- Blockcore -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-blue-600">Blockchain Developer</h3>
-                        <span class="text-lg text-gray-600 font-medium">2018 – Present</span>
+                <!-- Insurance Oman -->
+                <div class="card project-card animate-fade-up delay-1">
+                    <div class="project-top">
+                        <div class="project-icon icon-green"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Online Insurance Platform - Oman</h3>
+                        <p>Full-featured insurance sales system compliant with CMA and Oman Insurance Association regulations. Integrated with Dhofar Insurance, National Life, Al Ahlia, Vision Insurance, Oman United Insurance - real-time quote engines, policy issuance, claims tracking, and Bank Muscat / Bank Dhofar / Alizz Islamic Bank payment gateways.</p>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Blockcore</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Collaborated in building a custom blockchain from scratch.</li>
-                        <li>Developed blockchain applications for various use cases in cryptocurrency ecosystems.</li>
-                    </ul>
+                    <div class="project-bottom">
+                        <span class="tag green">Next.js</span><span class="tag amber">PostgreSQL</span>
+                        <span class="tag cyan">Omani Banks</span><span class="tag purple">CMA Compliant</span><span class="tag">React</span>
+                    </div>
                 </div>
-
-                <!-- BMS Company -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-blue-600">Founder & Owner</h3>
-                        <span class="text-lg text-gray-600 font-medium">2015 – Present</span>
+                <!-- Insurance Iran -->
+                <div class="card project-card animate-fade-up delay-2">
+                    <div class="project-top">
+                        <div class="project-icon icon-cyan"><i class="fas fa-hospital"></i></div>
+                        <h3>Online Insurance Platform - Iran</h3>
+                        <p>Comprehensive insurance sales system covering all major Iranian insurance companies (Iran Insurance, Asia, Dana, Parsian, Pasargad, Alborz) with third-party liability, fire, life, health, and travel products. Integrated with Shaparak payment gateway and Bimeh Markazi APIs.</p>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">BMS Company, Iran</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Founded and managed a technology company providing software development and IT solutions.</li>
-                        <li>Led multiple software development projects and managed technical teams.</li>
-                        <li>Delivered custom software solutions for various industries and business sectors.</li>
-                        <li>Established long-term client relationships and expanded business operations.</li>
-                        <li><strong>Specialized in Odoo ERP development:</strong> Designed and implemented comprehensive ERP solutions using Python, developing custom modules for manufacturing, healthcare, and retail industries.</li>
-                        <li><strong>Enterprise System Integration:</strong> Successfully integrated Odoo with existing business systems, payment gateways, and third-party applications for seamless data flow and process automation.</li>
-                    </ul>
+                    <div class="project-bottom">
+                        <span class="tag cyan">ASP.NET</span><span class="tag amber">SQL Server</span>
+                        <span class="tag green">Shaparak</span><span class="tag">Central Insurance API</span>
+                    </div>
                 </div>
-
-                <!-- Oil Company -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-blue-600">Project Manager</h3>
-                        <span class="text-lg text-gray-600 font-medium">Pre-2018</span>
+                <!-- E-Commerce -->
+                <div class="card project-card animate-fade-up delay-3">
+                    <div class="project-top">
+                        <div class="project-icon icon-amber"><i class="fas fa-store"></i></div>
+                        <h3>International E-Commerce Platform</h3>
+                        <p>Multi-vendor e-commerce with international shipping via Aramex, DHL, and FedEx APIs. Integrated with Visa/Mastercard, PayPal, Thawani (Oman), Bank Muscat, and cryptocurrency payments. Real-time tracking, multi-currency, customs docs, and GCC tax automation.</p>
                     </div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Oil Company (Iran)</h4>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Managed software projects including antivirus development and a custom CMS based on ASP.NET.</li>
-                        <li>Supervised teams of developers to deliver high-quality enterprise solutions.</li>
-                    </ul>
+                    <div class="project-bottom">
+                        <span class="tag amber">Next.js</span><span class="tag green">PostgreSQL</span>
+                        <span class="tag">Aramex</span><span class="tag purple">PayPal</span>
+                        <span class="tag cyan">Visa/MC</span><span class="tag red">Thawani</span>
+                    </div>
                 </div>
-
-                <!-- Software Developer -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-blue-600">Software Developer</h3>
-                        <span class="text-lg text-gray-600 font-medium">2008 – 2018</span>
+                <!-- SBC Platform -->
+                <div class="card project-card animate-fade-up delay-4">
+                    <div class="project-top">
+                        <div class="project-icon icon-purple"><i class="fas fa-fingerprint"></i></div>
+                        <h3>SeniorBlockchain Identity Platform</h3>
+                        <p>Decentralized identity and reputation layer. TrustPulse scoring, verifiable credentials, and self-sovereign identity management built on Nostr and Bitcoin.</p>
                     </div>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Created hundreds of applications for mobile, web, and desktop platforms.</li>
-                        <li>Specialized in enterprise-level systems for Windows, Linux, and macOS.</li>
-                    </ul>
+                    <div class="project-bottom">
+                        <span class="tag purple">DID</span><span class="tag">Nostr</span><span class="tag green">Web3</span>
+                        <span class="tag cyan">Angular</span><span class="tag amber">C#</span>
+                    </div>
+                </div>
+                <!-- Tokenize -->
+                <div class="card project-card animate-fade-up delay-5">
+                    <div class="project-top">
+                        <div class="project-icon icon-red"><i class="fas fa-coins"></i></div>
+                        <h3>Tokenize - Asset Tokenization</h3>
+                        <p>Real-world asset tokenization enabling fractional ownership of property, equity, and commodities on Bitcoin and Nostr with compliance-first architecture.</p>
+                    </div>
+                    <div class="project-bottom">
+                        <span class="tag red">Bitcoin</span><span class="tag purple">Tokenization</span>
+                        <span class="tag green">RWA</span><span class="tag cyan">React</span>
+                    </div>
+                </div>
+                <!-- Custom Blockchain -->
+                <div class="card project-card animate-fade-up">
+                    <div class="project-top">
+                        <div class="project-icon icon-amber"><i class="fas fa-cubes"></i></div>
+                        <h3>Custom Blockchain Networks</h3>
+                        <p>Multiple custom blockchains from scratch with the Blockcore team - consensus engines, full-node implementation, wallet systems, block explorers, and staking mechanisms.</p>
+                    </div>
+                    <div class="project-bottom">
+                        <span class="tag amber">C#</span><span class="tag">Blockcore</span><span class="tag green">PoS</span>
+                        <span class="tag purple">Full Node</span><span class="tag cyan">Explorer</span>
+                    </div>
+                </div>
+                <!-- Enterprise Odoo -->
+                <div class="card project-card animate-fade-up delay-1">
+                    <div class="project-top">
+                        <div class="project-icon icon-green"><i class="fas fa-industry"></i></div>
+                        <h3>Enterprise ERP Solutions (Odoo)</h3>
+                        <p>Comprehensive Odoo ERP with custom Python modules for manufacturing, healthcare, real estate, and retail - HR, CRM, accounting, inventory, and automated supply chain workflows.</p>
+                    </div>
+                    <div class="project-bottom">
+                        <span class="tag green">Python</span><span class="tag amber">Odoo</span><span class="tag">PostgreSQL</span>
+                        <span class="tag purple">ERP</span><span class="tag cyan">REST API</span>
+                    </div>
+                </div>
+                <!-- AI Solutions -->
+                <div class="card project-card animate-fade-up delay-2">
+                    <div class="project-top">
+                        <div class="project-icon icon-purple"><i class="fas fa-brain"></i></div>
+                        <h3>AI-Powered Business Intelligence</h3>
+                        <p>Custom ML models for insurance risk assessment, fraud detection, customer churn prediction, and automated claims processing. NLP pipelines and recommendation engines for e-commerce.</p>
+                    </div>
+                    <div class="project-bottom">
+                        <span class="tag purple">TensorFlow</span><span class="tag">PyTorch</span>
+                        <span class="tag green">NLP</span><span class="tag cyan">MLOps</span><span class="tag amber">FastAPI</span>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Key Projects -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">Key Projects</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="border-l-4 border-blue-600 pl-4">
-                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Angor Hub</h3>
-                        <p class="text-gray-700">White-label crowdfunding platform for communities and brands.</p>
-                    </div>
-                    <div class="border-l-4 border-green-600 pl-4">
-                        <h3 class="text-xl font-semibold text-green-600 mb-2">Tokenize</h3>
-                        <p class="text-gray-700">Asset tokenization system based on Bitcoin and Nostr.</p>
-                    </div>
-                    <div class="border-l-4 border-purple-600 pl-4">
-                        <h3 class="text-xl font-semibold text-purple-600 mb-2">NostrID</h3>
-                        <p class="text-gray-700">Decentralized identity and reputation system with TrustPulse scoring.</p>
-                    </div>
-                    <div class="border-l-4 border-orange-600 pl-4">
-                        <h3 class="text-xl font-semibold text-orange-600 mb-2">Custom Blockchain</h3>
-                        <p class="text-gray-700">Built with the Blockcore team.</p>
-                    </div>
-                    <div class="border-l-4 border-teal-600 pl-4">
-                        <h3 class="text-xl font-semibold text-teal-600 mb-2">Enterprise Odoo Solutions</h3>
-                        <p class="text-gray-700">Comprehensive ERP implementations with custom Python modules for manufacturing, healthcare, and retail industries.</p>
-                    </div>
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <h3 class="text-xl font-semibold text-red-600 mb-2">Enterprise CMS</h3>
-                        <p class="text-gray-700">ASP.NET-based content management system.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education & Languages -->
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <!-- Education -->
-            <section>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">Education</h2>
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Bachelor's Degree</h3>
-                    <p class="text-gray-700">Mathematics and Computer Science</p>
-                </div>
-            </section>
-
-            <!-- Languages -->
-            <section>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-600 pb-2">Languages</h2>
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center">
-                            <span class="font-semibold text-gray-800">Persian</span>
-                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Native</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-semibold text-gray-800">English</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Intermediate</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
-    </main>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-briefcase"></i> Career</div>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate-fade-up">
+                    <div class="card">
+                        <div class="exp-header">
+                            <div class="exp-role">Founder &amp; CEO</div>
+                            <div class="exp-date">2022 - Present</div>
+                        </div>
+                        <div class="exp-company">SBC (Senior BlockChain LLC) - Grade 1 Company, Muscat, Oman</div>
+                        <ul class="exp-list">
+                            <li>Founded and leading a Grade 1 blockchain technology company in Oman specializing in enterprise blockchain solutions, AI/ML consulting, and large-scale software architecture.</li>
+                            <li>Architected and delivered the online insurance platform for the Omani market - integrated with CMA regulations, local insurers, and Omani banking payment gateways.</li>
+                            <li>Developed international e-commerce platform with Aramex/DHL logistics, multi-currency support, and Visa/PayPal/Thawani payment processing.</li>
+                            <li>Built custom AI models for insurance risk scoring and fraud detection serving Omani and regional clients.</li>
+                            <li>Managing strategic partnerships and business development across the MENA region.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item animate-fade-up delay-1">
+                    <div class="card">
+                        <div class="exp-header">
+                            <div class="exp-role">Lead Developer &amp; Architect</div>
+                            <div class="exp-date">2022 - Present</div>
+                        </div>
+                        <div class="exp-company">Angor - Decentralized Crowdfunding Platform</div>
+                        <ul class="exp-list">
+                            <li>Designed and developed a decentralized crowdfunding platform integrating Bitcoin, Nostr protocol, and Lightning Network for trustless investment workflows.</li>
+                            <li>Led all aspects - system architecture, UI/UX design, advanced cryptographic implementations, documentation, branding, and go-to-market strategy.</li>
+                            <li>Implemented PSBT-based smart escrow, decentralized data storage, and blockchain-based identity verification.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item animate-fade-up delay-2">
+                    <div class="card">
+                        <div class="exp-header">
+                            <div class="exp-role">Core Blockchain Developer</div>
+                            <div class="exp-date">2018 - Present</div>
+                        </div>
+                        <div class="exp-company">Blockcore - Open Source Blockchain Platform</div>
+                        <ul class="exp-list">
+                            <li>Core contributor to building custom blockchains from scratch - consensus engines, full-node implementations, wallet systems, and block explorers.</li>
+                            <li>Developed multiple blockchain applications including decentralized identity, tokenization platforms, and P2P payment networks.</li>
+                            <li>Contributed to open-source tools used by the broader blockchain developer community.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item animate-fade-up delay-3">
+                    <div class="card">
+                        <div class="exp-header">
+                            <div class="exp-role">Founder &amp; Owner</div>
+                            <div class="exp-date">2015 - Present</div>
+                        </div>
+                        <div class="exp-company">BMS Company - Tehran, Iran</div>
+                        <ul class="exp-list">
+                            <li>Founded and managed a technology company delivering custom software, ERP solutions, and IT consulting for enterprise clients.</li>
+                            <li>Built the Iranian online insurance platform integrating with all major providers (Iran Insurance, Asia, Dana, Parsian, Pasargad, Alborz) and Shaparak payment infrastructure.</li>
+                            <li>Specialized in Odoo ERP implementations - delivered custom Python modules for manufacturing, healthcare, retail, and real estate.</li>
+                            <li>Trained and led multi-disciplinary teams of developers, designers, and QA engineers.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item animate-fade-up delay-4">
+                    <div class="card">
+                        <div class="exp-header">
+                            <div class="exp-role">Project Manager</div>
+                            <div class="exp-date">Before 2018</div>
+                        </div>
+                        <div class="exp-company">National Oil Company - Iran</div>
+                        <ul class="exp-list">
+                            <li>Managed enterprise software projects including custom antivirus solutions and a full-featured CMS platform built on ASP.NET.</li>
+                            <li>Supervised development teams delivering mission-critical systems for national energy infrastructure.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item animate-fade-up delay-5">
+                    <div class="card">
+                        <div class="exp-header">
+                            <div class="exp-role">Senior Software Developer</div>
+                            <div class="exp-date">2008 - 2018</div>
+                        </div>
+                        <div class="exp-company">Freelance &amp; Contract - Multiple Clients</div>
+                        <ul class="exp-list">
+                            <li>Created 200+ applications across mobile, web, and desktop platforms for clients in fintech, healthcare, manufacturing, and government.</li>
+                            <li>Specialized in enterprise-level system design for Windows, Linux, and macOS environments.</li>
+                            <li>Built AI-driven analytics tools, CRM systems, inventory management, and e-commerce platforms.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Odoo ERP -->
+    <section class="section" style="background:linear-gradient(180deg,rgba(16,185,129,.03) 0%,transparent 100%)">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-cogs"></i> ERP</div>
+                <h2 class="section-title">Odoo ERP Development</h2>
+            </div>
+            <div class="highlight-grid animate-fade-up" style="margin-bottom:28px">
+                <div class="highlight-item"><i class="fas fa-building"></i><span>Sales &amp; Procurement</span></div>
+                <div class="highlight-item"><i class="fas fa-users"></i><span>HR &amp; Payroll</span></div>
+                <div class="highlight-item"><i class="fas fa-warehouse"></i><span>Inventory &amp; MRP</span></div>
+                <div class="highlight-item"><i class="fas fa-calculator"></i><span>Accounting</span></div>
+                <div class="highlight-item"><i class="fas fa-chart-line"></i><span>CRM &amp; Marketing</span></div>
+                <div class="highlight-item"><i class="fas fa-hospital"></i><span>Healthcare</span></div>
+                <div class="highlight-item"><i class="fas fa-graduation-cap"></i><span>Education</span></div>
+                <div class="highlight-item"><i class="fas fa-home"></i><span>Real Estate</span></div>
+            </div>
+            <div class="skills-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+                <div class="card skill-card animate-fade-up">
+                    <h3 style="color:var(--accent4);margin-bottom:10px">Custom Module Architecture</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Python ORM models, business logic, automated workflows, XML views, QWeb reports, JavaScript/OWL components, and PostgreSQL optimization.</p>
+                </div>
+                <div class="card skill-card animate-fade-up delay-1">
+                    <h3 style="color:var(--accent4);margin-bottom:10px">Industry-Specific Solutions</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">Manufacturing (BOM, QC, maintenance), Healthcare (patient records, billing), Construction (project costing, progress tracking), Education (student management, fees).</p>
+                </div>
+                <div class="card skill-card animate-fade-up delay-2">
+                    <h3 style="color:var(--accent4);margin-bottom:10px">Integration &amp; Migration</h3>
+                    <p style="font-size:.83rem;color:var(--text2)">REST API integration, third-party sync, data migration, payment gateways, e-commerce integration, and performance tuning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <div class="section-tag"><i class="fas fa-palette"></i> Design</div>
+                <h2 class="section-title">Design &amp; Creative</h2>
+            </div>
+            <div class="skills-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+                <div class="card skill-card animate-fade-up">
+                    <div class="skill-icon icon-pink"><i class="fas fa-pen-nib"></i></div>
+                    <h3>UI/UX &amp; Branding</h3>
+                    <div class="tags">
+                        <span class="tag red">Figma</span><span class="tag red">Adobe XD</span><span class="tag red">Photoshop</span>
+                        <span class="tag red">Illustrator</span><span class="tag red">Brand Identity</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-1">
+                    <div class="skill-icon icon-purple"><i class="fas fa-video"></i></div>
+                    <h3>Motion &amp; Video</h3>
+                    <div class="tags">
+                        <span class="tag purple">After Effects</span><span class="tag purple">Premiere Pro</span>
+                        <span class="tag purple">Motion Graphics</span><span class="tag purple">Video Production</span>
+                    </div>
+                </div>
+                <div class="card skill-card animate-fade-up delay-2">
+                    <div class="skill-icon icon-cyan"><i class="fas fa-print"></i></div>
+                    <h3>Print &amp; Graphic Design</h3>
+                    <div class="tags">
+                        <span class="tag cyan">CorelDRAW</span><span class="tag cyan">InDesign</span>
+                        <span class="tag cyan">Visual Identity</span><span class="tag cyan">Marketing Materials</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Languages -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="two-col">
+                <div class="animate-fade-up">
+                    <div class="section-header">
+                        <div class="section-tag"><i class="fas fa-graduation-cap"></i> Education</div>
+                        <h2 class="section-title">Education</h2>
+                    </div>
+                    <div class="card">
+                        <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px">
+                            <div class="skill-icon icon-blue"><i class="fas fa-university"></i></div>
+                            <div>
+                                <h3 style="font-size:1.05rem;font-weight:700">Bachelor's Degree</h3>
+                                <p style="font-size:.88rem;color:var(--text2)">Mathematics &amp; Computer Science</p>
+                            </div>
+                        </div>
+                        <p style="font-size:.83rem;color:var(--text2)">Strong foundation in algorithms, data structures, mathematical modeling, and computational theory - directly applicable to AI/ML research and blockchain cryptography.</p>
+                    </div>
+                </div>
+                <div class="animate-fade-up delay-2">
+                    <div class="section-header">
+                        <div class="section-tag"><i class="fas fa-globe"></i> Languages</div>
+                        <h2 class="section-title">Languages</h2>
+                    </div>
+                    <div class="card">
+                        <div style="margin-bottom:20px">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                                <span style="font-weight:600;font-size:.9rem">Persian (Farsi)</span>
+                                <span style="font-size:.75rem;color:var(--accent4);font-weight:600">Native</span>
+                            </div>
+                            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                        </div>
+                        <div style="margin-bottom:20px">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                                <span style="font-weight:600;font-size:.9rem">English</span>
+                                <span style="font-size:.75rem;color:var(--accent);font-weight:600">Professional</span>
+                            </div>
+                            <div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                                <span style="font-weight:600;font-size:.9rem">Arabic</span>
+                                <span style="font-size:.75rem;color:var(--accent5);font-weight:600">Basic</span>
+                            </div>
+                            <div class="lang-bar"><div class="lang-fill" style="width:30%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-lg mb-4">Let's connect and build something amazing together!</p>
-            <div class="flex justify-center space-x-6">
-                <a href="mailto:miladsoft@yahoo.com" title="Send Email" class="hover:text-blue-400 transition-colors">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
-                <a href="tel:+96891200634" title="Call Phone" class="hover:text-blue-400 transition-colors">
-                    <i class="fas fa-phone text-2xl"></i>
-                </a>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-links">
+                <a href="mailto:miladsoft@yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+96891200634" title="Phone"><i class="fas fa-phone"></i></a>
+                <a href="https://github.com/miladsoft" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/miladraeisi/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
+            <p>&copy; 2024 Milad Raeisi. Built with precision.</p>
         </div>
     </footer>
+
+    <a href="print.html" class="print-btn" title="Print Version"><i class="fas fa-print"></i></a>
+    <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        const nav=document.getElementById('nav'),backTop=document.getElementById('backTop');
+        window.addEventListener('scroll',()=>{
+            nav.classList.toggle('scrolled',window.scrollY>50);
+            backTop.classList.toggle('visible',window.scrollY>400);
+        });
+        function toggleMenu(){
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('navToggle').classList.toggle('active');
+            document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('active')?'hidden':'';
+        }
+        const observer=new IntersectionObserver(entries=>{
+            entries.forEach(e=>{if(e.isIntersecting){e.target.style.animationPlayState='running';observer.unobserve(e.target)}});
+        },{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.animate-fade-up').forEach(el=>{el.style.animationPlayState='paused';observer.observe(el)});
+        const sections=document.querySelectorAll('section[id]');
+        window.addEventListener('scroll',()=>{
+            const y=window.scrollY+100;
+            sections.forEach(s=>{
+                const t=s.offsetTop,h=s.offsetHeight,id=s.getAttribute('id');
+                const l=document.querySelector('.nav-links a[href="#'+id+'"]');
+                if(l)l.classList.toggle('active',y>=t&&y<t+h);
+            });
+        });
+    </script>
 </body>
 </html>

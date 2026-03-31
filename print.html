@@ -3,1182 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milad Raeisi - CV & Portfolio (Print Version)</title>
+    <title>Milad Raeisi - CV (Print Version)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        /* Print-specific CSS */
-        @media print {
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            
-            @page {
-                size: A4;
-                margin: 2cm 1cm 2cm 1cm;
-                @top-center {
-                    content: "Milad Raeisi - Software Developer & Project Manager";
-                    font-family: 'Inter', sans-serif;
-                    font-size: 10pt;
-                    color: #374151;
-                    border-bottom: 1px solid #e5e7eb;
-                    padding-bottom: 5px;
-                    margin-bottom: 10px;
-                }
-                @bottom-left {
-                    content: "📧 miladsoft@yahoo.com | 📱 +968 9120 0634 | 📍 Oman";
-                    font-family: 'Inter', sans-serif;
-                    font-size: 8pt;
-                    color: #6b7280;
-                    border-top: 1px solid #e5e7eb;
-                    padding-top: 5px;
-                    margin-top: 10px;
-                }
-                @bottom-center {
-                    content: "Generated: " date();
-                    font-family: 'Inter', sans-serif;
-                    font-size: 8pt;
-                    color: #6b7280;
-                }
-                @bottom-right {
-                    content: "Page " counter(page) " of " counter(pages);
-                    font-family: 'Inter', sans-serif;
-                    font-size: 9pt;
-                    color: #6b7280;
-                    border-top: 1px solid #e5e7eb;
-                    padding-top: 5px;
-                    margin-top: 10px;
-                }
-            }
-            
-            /* Hide elements not needed for print */
-            .no-print, 
-            .print-hidden {
-                display: none !important;
-            }
-            
-            /* Optimize spacing for print */
-            body {
-                font-size: 11pt !important;
-                line-height: 1.4 !important;
-                max-width: 100% !important;
-                padding: 0 !important;
-            }
-            
-            /* Better page break control */
-            .section {
-                page-break-inside: avoid;
-                margin-bottom: 15pt !important;
-            }
-            
-            .section-title {
-                page-break-after: avoid;
-                margin-top: 15pt !important;
-                margin-bottom: 8pt !important;
-            }
-            
-            /* Skills grid optimization for print */
-            .skills-grid {
-                display: block !important;
-                column-count: 2;
-                column-gap: 15pt;
-                page-break-inside: avoid;
-            }
-            
-            .skill-category {
-                break-inside: avoid;
-                margin-bottom: 10pt;
-                padding: 10pt !important;
-            }
-            
-            /* Experience items */
-            .experience-item {
-                page-break-inside: avoid;
-                margin-bottom: 10pt !important;
-                padding: 12pt !important;
-            }
-            
-            /* Project grid for print */
-            .projects-grid {
-                display: block !important;
-                column-count: 2;
-                column-gap: 15pt;
-            }
-            
-            .project-item {
-                break-inside: avoid;
-                margin-bottom: 8pt;
-                padding: 8pt !important;
-            }
-            
-            /* Header optimization */
-            .header {
-                margin-bottom: 15pt !important;
-                padding: 15pt !important;
-                page-break-after: avoid;
-            }
-            
-            /* Section content */
-            .section-content {
-                padding: 12pt !important;
-            }
-            
-            /* List spacing */
-            ul {
-                margin-bottom: 8pt !important;
-            }
-            
-            ul li {
-                margin-bottom: 2pt !important;
-                line-height: 1.3 !important;
-            }
-            
-            h1 {
-                font-size: 20pt !important;
-                page-break-after: avoid;
-                margin-bottom: 5pt !important;
-            }
-            
-            h2 {
-                font-size: 14pt !important;
-                page-break-after: avoid;
-                margin-top: 15pt !important;
-                margin-bottom: 8pt !important;
-            }
-            
-            h3 {
-                font-size: 11pt !important;
-                page-break-after: avoid;
-                margin-bottom: 5pt !important;
-            }
-            
-            h4 {
-                font-size: 10pt !important;
-                page-break-after: avoid;
-                margin-bottom: 3pt !important;
-            }
-            
-            /* Prevent page breaks inside important sections */
-            .keep-together {
-                page-break-inside: avoid;
-            }
-            
-            /* Optimize sections for print */
-            .print-section {
-                margin-bottom: 15pt;
-                page-break-inside: avoid;
-            }
-            
-            /* Skills tags smaller for print */
-            .skill-tag {
-                font-size: 8pt !important;
-                padding: 2pt 6pt !important;
-                margin: 1pt !important;
-            }
-            
-            /* Compact grid for print */
-            .print-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 10pt;
-                margin-bottom: 10pt;
-            }
-            
-            .print-grid-3 {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 8pt;
-                margin-bottom: 10pt;
-            }
+        @page{size:A4;margin:1.5cm 1.2cm}
+        *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+        body{font-family:'Inter',system-ui,sans-serif;font-size:9.5pt;line-height:1.45;color:#1e293b;background:#fff;max-width:210mm;margin:0 auto;padding:20px}
+        h1{font-size:22pt;font-weight:800;letter-spacing:-1px;color:#0f172a}
+        h2{font-size:12pt;font-weight:700;color:#1e40af;border-bottom:2px solid #3b82f6;padding-bottom:3px;margin:16pt 0 8pt}
+        h3{font-size:10pt;font-weight:700;color:#1e293b;margin-bottom:4pt}
+        h4{font-size:9pt;font-weight:600;color:#3b82f6;margin-bottom:3pt}
+
+        .header{text-align:center;padding:16pt 0 12pt;border-bottom:2px solid #e2e8f0;margin-bottom:12pt}
+        .header .subtitle{font-size:11pt;color:#475569;font-weight:500;margin:4pt 0}
+        .header .tagline{font-size:9pt;color:#64748b;margin-bottom:8pt}
+        .contact-row{display:flex;justify-content:center;gap:20pt;font-size:8.5pt;color:#475569;flex-wrap:wrap}
+        .contact-row span{display:flex;align-items:center;gap:4pt}
+
+        .summary{font-size:9pt;color:#475569;line-height:1.5;margin-bottom:12pt;text-align:justify}
+
+        .skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8pt;margin-bottom:10pt}
+        .skill-box{border:1px solid #e2e8f0;border-radius:6px;padding:8pt}
+        .skill-box h4{margin-bottom:4pt}
+        .skill-box p{font-size:7.5pt;color:#64748b;line-height:1.35}
+        .tags{display:flex;flex-wrap:wrap;gap:3pt;margin-top:4pt}
+        .tag{background:#eff6ff;color:#1e40af;padding:1.5pt 6pt;border-radius:3px;font-size:7pt;font-weight:500}
+        .tag.green{background:#ecfdf5;color:#065f46}
+        .tag.purple{background:#f5f3ff;color:#5b21b6}
+        .tag.amber{background:#fffbeb;color:#92400e}
+        .tag.cyan{background:#ecfeff;color:#155e75}
+
+        .exp-item{border-left:2px solid #3b82f6;padding-left:10pt;margin-bottom:10pt;page-break-inside:avoid}
+        .exp-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2pt}
+        .exp-role{font-size:10pt;font-weight:700;color:#1e40af}
+        .exp-date{font-size:7.5pt;color:#64748b;font-weight:500}
+        .exp-company{font-size:8.5pt;font-weight:600;color:#334155;margin-bottom:4pt}
+        .exp-list{list-style:none;padding:0}
+        .exp-list li{font-size:8pt;color:#475569;padding-left:12pt;position:relative;margin-bottom:2pt;line-height:1.4}
+        .exp-list li::before{content:'\2022';position:absolute;left:0;color:#3b82f6;font-weight:bold}
+
+        .projects-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8pt;margin-bottom:12pt}
+        .project-box{border:1px solid #e2e8f0;border-radius:6px;padding:8pt;page-break-inside:avoid}
+        .project-box h3{font-size:8.5pt;color:#1e40af;margin-bottom:3pt}
+        .project-box p{font-size:7pt;color:#64748b;line-height:1.35}
+
+        .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12pt;margin-bottom:10pt}
+        .lang-bar{height:4pt;background:#e2e8f0;border-radius:2pt;margin-top:4pt;overflow:hidden}
+        .lang-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2pt}
+
+        .highlight-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6pt;margin-bottom:10pt}
+        .hl-item{text-align:center;border:1px solid #e2e8f0;border-radius:6px;padding:6pt 4pt}
+        .hl-item strong{display:block;font-size:14pt;font-weight:800;color:#3b82f6}
+        .hl-item span{font-size:7pt;color:#64748b;text-transform:uppercase;letter-spacing:.5pt}
+
+        .page-break{page-break-before:always}
+        .no-break{page-break-inside:avoid}
+
+        @media screen{
+            body{padding:30px;max-width:900px}
+            .print-actions{position:fixed;top:20px;right:20px;display:flex;gap:8px;z-index:100}
+            .print-actions a,.print-actions button{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#1e293b;transition:all .2s}
+            .print-actions button{background:#3b82f6;color:#fff;border:none}
+            .print-actions a:hover{background:#f1f5f9}
+            .print-actions button:hover{background:#2563eb}
         }
-        
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            font-size: 12pt;
-            line-height: 1.5;
-            color: #374151;
-            background-color: #ffffff;
-            max-width: 280mm;
-            margin: 0 auto;
-            padding: 15px;
-        }
-        
-        /* Header styles */
-        .header {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 28pt;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .header .subtitle {
-            font-size: 16pt;
-            font-weight: 500;
-            margin-bottom: 5px;
-            opacity: 0.9;
-        }
-        
-        .header .tagline {
-            font-size: 12pt;
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            font-size: 11pt;
-            flex-wrap: wrap;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        /* Section styles */
-        .section {
-            margin-bottom: 20px;
-            page-break-inside: avoid;
-        }
-        
-        .section-title {
-            font-size: 16pt;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #2563eb;
-            padding-bottom: 4px;
-        }
-        
-        .section-content {
-            background: transparent;
-            padding: 20px;
-            border-radius: 6px;
-        }
-        
-        /* Skills grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        
-        .skill-category {
-            background: transparent;
-            padding: 12px;
-            border-radius: 4px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .skill-category h3 {
-            color: #2563eb;
-            font-size: 13pt;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-        
-        .skill-tag {
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 9pt;
-            font-weight: 500;
-        }
-        
-        .skill-description {
-            font-size: 10pt;
-            color: #6b7280;
-            line-height: 1.4;
-        }
-        
-        /* Experience styles */
-        .experience-item {
-            background: transparent;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-            margin-bottom: 15px;
-            page-break-inside: avoid;
-        }
-        
-        .experience-header {
-            display: flex;
-            justify-content: between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .experience-title {
-            color: #2563eb;
-            font-size: 14pt;
-            font-weight: 600;
-        }
-        
-        .experience-period {
-            color: #6b7280;
-            font-size: 11pt;
-            font-weight: 500;
-            margin-left: auto;
-        }
-        
-        .experience-company {
-            color: #1f2937;
-            font-size: 12pt;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .experience-description {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .experience-description li {
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 0;
-        }
-        
-        .experience-description li:before {
-            content: "";
-            color: #2563eb;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        /* Add left spacing to all ul elements */
-        ul {
-            padding-left: 20px;
-        }
-        
-        ul li {
-            margin-bottom: 3px;
-        }
-        
-        /* Force page break for specific sections */
-        .page-break-before {
-            page-break-before: always;
-        }
-        
-        /* Project grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-        }
-        
-        .project-item {
-            background: transparent;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .project-title {
-            color: #2563eb;
-            font-size: 12pt;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .project-description {
-            color: #6b7280;
-            font-size: 10pt;
-            line-height: 1.4;
-        }
-        
-        /* Education and languages */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .info-item {
-            background: transparent;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .info-title {
-            color: #2563eb;
-            font-size: 12pt;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        
-        .language-level {
-            background: #dcfce7;
-            color: #166534;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 9pt;
-            font-weight: 500;
-        }
-        
-        .language-level.professional {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        .footer-screen {
-            margin-top: 40px;
-            padding: 20px;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-        
-        .footer-text {
-            color: #6b7280;
-            font-size: 11pt;
-        }
-        
-        /* Utility classes */
-        .text-center { text-align: center; }
-        .font-bold { font-weight: 700; }
-        .font-semibold { font-weight: 600; }
-        .text-sm { font-size: 10pt; }
-        .mb-2 { margin-bottom: 8px; }
-        .mb-3 { margin-bottom: 12px; }
-        .mb-4 { margin-bottom: 16px; }
-        
-        /* Print button (hidden in print) */
-        .print-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        
-        .print-button:hover {
-            background: #1d4ed8;
-        }
-        
-        @media print {
-            .print-button {
-                display: none;
-            }
-        }
-        
-        /* Professional summary */
-        .summary-text {
-            font-size: 11pt;
-            line-height: 1.6;
-            color: #374151;
-            margin-bottom: 12px;
-            text-align: justify;
-        }
-        
-        .highlight {
-            font-weight: 600;
-            color: #1f2937;
-        }
+        @media print{.print-actions{display:none!important}}
     </style>
 </head>
 <body>
-    <!-- Print Button -->
-    <button class="print-button no-print" onclick="window.print()">🖨️ Print CV</button>
+    <div class="print-actions">
+        <a href="index.html">&larr; Back to Website</a>
+        <button onclick="window.print()">Print / Save PDF</button>
+    </div>
 
-    <!-- Header Section -->
-    <header class="header">
+    <!-- Header -->
+    <div class="header">
         <h1>Milad Raeisi</h1>
-        <div class="subtitle">Software Developer & Project Manager</div>
-        <div class="tagline">Blockchain Expert Full-Stack Developer Entrepreneur</div>
-        <div class="contact-info">
-            <div class="contact-item">
-                <span>📱</span>
-                <span>+968 9120 0634</span>
-            </div>
-            <div class="contact-item">
-                <span>📧</span>
-                <span>miladsoft@yahoo.com</span>
-            </div>
-            <div class="contact-item">
-                <span>📍</span>
-                <span>Oman</span>
-            </div>
+        <div class="subtitle">Senior Software Architect &bull; AI/ML Specialist &bull; Blockchain Expert</div>
+        <div class="tagline">Entrepreneur &bull; Full-Stack Developer &bull; 15+ Years Experience</div>
+        <div class="contact-row">
+            <span>&#9742; +968 9120 0634</span>
+            <span>&#9993; miladsoft@yahoo.com</span>
+            <span>&#9872; Muscat, Oman</span>
         </div>
-    </header>
+    </div>
 
-    <!-- Professional Summary -->
-    <section class="section keep-together">
-        <h2 class="section-title">Professional Summary</h2>
-        <div class="section-content">
-            <p class="summary-text">
-                ✨ Passionate software architect and full-stack developer with over a decade of expertise in building scalable applications across web, mobile, and desktop platforms. Specialized in cutting-edge technologies including <span class="highlight">blockchain development</span>, <span class="highlight">decentralized systems</span>, <span class="highlight">artificial intelligence</span>, and modern UI/UX design.
-            </p>
-            <p class="summary-text">
-                Proven expertise in <span class="highlight">Blockchain Technology</span> with deep knowledge of Bitcoin, Lightning Network, Nostr Protocol, and decentralized identity systems. As a core contributor to <span class="highlight">Blockcore</span>, I bring extensive experience in building custom blockchain solutions from the ground up.
-            </p>
-            <p class="summary-text">
-                Accomplished entrepreneur with a strong track record of founding and leading successful technology companies. Founder & CEO of <span class="highlight">SBC (Senior BlockChain LLC)</span> - a Grade 1 company in Oman, and Founder & Owner of <span class="highlight">BMS Company</span> in Iran, demonstrating leadership in both technical innovation and business development.
-            </p>
-        </div>
-    </section>
+    <!-- Stats -->
+    <div class="highlight-row">
+        <div class="hl-item"><strong>15+</strong><span>Years Experience</span></div>
+        <div class="hl-item"><strong>200+</strong><span>Projects Delivered</span></div>
+        <div class="hl-item"><strong>50+</strong><span>AI Models Built</span></div>
+        <div class="hl-item"><strong>10+</strong><span>Custom Blockchains</span></div>
+    </div>
+
+    <!-- Summary -->
+    <p class="summary">
+        Passionate software architect and full-stack developer with over 15 years of expertise in building scalable applications across web, mobile, and desktop platforms. Specialized in AI/ML model development (TensorFlow, PyTorch, LLMs), custom blockchain architecture (Blockcore core contributor), and modern web technologies (React, Next.js, Angular). Founder &amp; CEO of SBC (Senior BlockChain LLC) - a Grade 1 company in Oman, and Founder of BMS Company in Iran. Proven track record in delivering enterprise insurance platforms, international e-commerce systems, and decentralized financial applications across the MENA region.
+    </p>
 
     <!-- Technical Skills -->
-    <section class="section">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="section-content">
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">ASP.NET</span>
-                        <span class="skill-tag">.NET</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Kotlin</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Blockchain & Web3</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Bitcoin</span>
-                        <span class="skill-tag">Lightning Network</span>
-                        <span class="skill-tag">Nostr Protocol</span>
-                        <span class="skill-tag">PSBT</span>
-                        <span class="skill-tag">Smart Contracts</span>
-                        <span class="skill-tag">DeFi</span>
-                        <span class="skill-tag">Decentralized Identity</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Frontend Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Blazor</span>
-                        <span class="skill-tag">TailwindCSS</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Mobile Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">Kotlin</span>
-                        <span class="skill-tag">Swift</span>
-                        <span class="skill-tag">Xamarin</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Backend & Database</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Supabase</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Design & Creative</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Adobe Photoshop</span>
-                        <span class="skill-tag">After Effects</span>
-                        <span class="skill-tag">CorelDRAW</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>ERP & Business Systems</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Odoo Development</span>
-                        <span class="skill-tag">Python Integration</span>
-                        <span class="skill-tag">Business Logic</span>
-                        <span class="skill-tag">ERP Solutions</span>
-                        <span class="skill-tag">Process Automation</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Azure</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                    </div>
-                </div>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-box">
+            <h4>Programming Languages</h4>
+            <div class="tags">
+                <span class="tag">C#</span><span class="tag">Python</span><span class="tag">TypeScript</span>
+                <span class="tag">JavaScript</span><span class="tag">Kotlin</span><span class="tag">Swift</span>
+                <span class="tag">Rust</span><span class="tag">Go</span><span class="tag">Solidity</span>
+                <span class="tag">Dart</span><span class="tag">Java</span><span class="tag">C++</span>
             </div>
         </div>
-    </section>
-
-    <!-- Odoo ERP Development Expertise -->
-    <section class="section">
-        <h2 class="section-title">🔧 Odoo ERP Development Expertise</h2>
-        <div class="section-content">
-            <p class="summary-text">
-                Extensive experience in developing and customizing <span class="highlight">Odoo ERP modules</span> using Python, delivering comprehensive business solutions that streamline operations and enhance organizational efficiency across multiple industries.
-            </p>
-            
-            <div class="skills-grid">
-                <!-- Core Business Modules -->
-                <div class="skill-category">
-                    <h3>🏢 Core Business Modules</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Sales Management:</span> Custom quotation workflows, pricing rules, commission structures</li>
-                        <li><span class="highlight">Purchase Management:</span> Vendor evaluation, automated procurement, approval workflows</li>
-                        <li><span class="highlight">Inventory Management:</span> Multi-location stock control, barcode integration, lot tracking</li>
-                        <li><span class="highlight">Accounting & Finance:</span> Custom chart of accounts, automated reconciliation, financial reporting</li>
-                    </ul>
-                </div>
-
-                <!-- HR & Project Management -->
-                <div class="skill-category">
-                    <h3>👥 HR & Project Management</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Human Resources:</span> Employee lifecycle management, payroll integration, performance tracking</li>
-                        <li><span class="highlight">Project Management:</span> Task automation, time tracking, resource allocation, Gantt charts</li>
-                        <li><span class="highlight">Timesheet Management:</span> Automated time capture, project billing, productivity analytics</li>
-                        <li><span class="highlight">Recruitment:</span> Applicant tracking system, interview scheduling, candidate evaluation</li>
-                    </ul>
-                </div>
-
-                <!-- Manufacturing & Production -->
-                <div class="skill-category">
-                    <h3>⚙️ Manufacturing & Production</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Manufacturing Orders:</span> Production planning, work center management, quality control</li>
-                        <li><span class="highlight">Bill of Materials:</span> Multi-level BOM, variant management, cost calculation</li>
-                        <li><span class="highlight">Quality Management:</span> Quality points, control plans, non-conformity tracking</li>
-                        <li><span class="highlight">Maintenance:</span> Preventive maintenance scheduling, equipment tracking, repair workflows</li>
-                    </ul>
-                </div>
-
-                <!-- CRM & Marketing -->
-                <div class="skill-category">
-                    <h3>📈 CRM & Marketing</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Customer Relationship:</span> Lead scoring, opportunity pipeline, customer segmentation</li>
-                        <li><span class="highlight">Marketing Automation:</span> Email campaigns, social media integration, analytics</li>
-                        <li><span class="highlight">Helpdesk & Support:</span> Ticket management, SLA tracking, customer portal integration</li>
-                        <li><span class="highlight">E-commerce Integration:</span> Online store sync, payment gateways, shipping management</li>
-                    </ul>
-                </div>
-
-                <!-- Custom Industry Solutions -->
-                <div class="skill-category">
-                    <h3>🏭 Custom Industry Solutions</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Healthcare Management:</span> Patient records, appointment scheduling, medical billing</li>
-                        <li><span class="highlight">Educational Institutions:</span> Student management, course planning, fee collection</li>
-                        <li><span class="highlight">Real Estate:</span> Property management, lease tracking, maintenance requests</li>
-                        <li><span class="highlight">Construction:</span> Project costing, subcontractor management, progress tracking</li>
-                    </ul>
-                </div>
-
-                <!-- Technical Architecture -->
-                <div class="skill-category">
-                    <h3>💻 Technical Architecture</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Python Development:</span> ORM models, business logic, automated workflows</li>
-                        <li><span class="highlight">API Integration:</span> REST APIs, third-party system integration, data synchronization</li>
-                        <li><span class="highlight">Report Development:</span> Custom reports, QWeb templates, dashboard creation</li>
-                        <li><span class="highlight">Database Optimization:</span> Query optimization, index management, performance tuning</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="mt-4 page-break-before">
-                <h3 class="text-lg font-semibold mb-3">🛠️ Technical Capabilities & Methodologies</h3>
-                <div class="print-grid">
-                    <div>
-                        <h4 class="font-semibold mb-2">Development Expertise:</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python/ORM</span>
-                            <span class="skill-tag">XML Views</span>
-                            <span class="skill-tag">QWeb Reports</span>
-                            <span class="skill-tag">JavaScript/OWL</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">REST APIs</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">Implementation Approach:</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Agile Development</span>
-                            <span class="skill-tag">Module Architecture</span>
-                            <span class="skill-tag">Data Migration</span>
-                            <span class="skill-tag">System Integration</span>
-                            <span class="skill-tag">Performance Optimization</span>
-                            <span class="skill-tag">User Training</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="skill-box">
+            <h4>Frontend &amp; Frameworks</h4>
+            <div class="tags">
+                <span class="tag cyan">React</span><span class="tag cyan">Next.js</span><span class="tag cyan">Angular</span>
+                <span class="tag cyan">Vue.js</span><span class="tag cyan">Blazor</span><span class="tag cyan">TailwindCSS</span>
+                <span class="tag cyan">Redux</span><span class="tag cyan">Nuxt.js</span><span class="tag cyan">Vite</span>
             </div>
         </div>
-    </section>
-
-    <!-- Mobile Application Development -->
-    <section class="section">
-        <h2 class="section-title">📱 Mobile Application Development</h2>
-        <div class="section-content">
-            <p class="summary-text">
-                Comprehensive expertise in developing native and cross-platform mobile applications for <span class="highlight">Android and iOS</span> platforms, utilizing modern frameworks and technologies to deliver high-performance, user-centric mobile solutions.
-            </p>
-            
-            <div class="skills-grid">
-                <!-- Android Development -->
-                <div class="skill-category">
-                    <h3>🤖 Android Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Native Development:</span> Kotlin, Java, Android SDK, Jetpack Compose</li>
-                        <li><span class="highlight">Architecture Patterns:</span> MVVM, MVP, Clean Architecture, Repository Pattern</li>
-                        <li><span class="highlight">UI/UX Implementation:</span> Material Design, Custom Views, Animations, Responsive Layouts</li>
-                        <li><span class="highlight">Data Management:</span> Room Database, SQLite, SharedPreferences, DataStore</li>
-                        <li><span class="highlight">Networking:</span> Retrofit, OkHttp, REST APIs, GraphQL integration</li>
-                    </ul>
-                </div>
-
-                <!-- iOS Development -->
-                <div class="skill-category">
-                    <h3>🍎 iOS Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Native Development:</span> Swift, Objective-C, iOS SDK, SwiftUI</li>
-                        <li><span class="highlight">Architecture:</span> MVC, MVVM, VIPER, Coordinator Pattern</li>
-                        <li><span class="highlight">UI Framework:</span> UIKit, SwiftUI, Auto Layout, Human Interface Guidelines</li>
-                        <li><span class="highlight">Data Persistence:</span> Core Data, SQLite, UserDefaults, Keychain Services</li>
-                        <li><span class="highlight">Networking:</span> URLSession, Alamofire, RESTful services, JSON parsing</li>
-                    </ul>
-                </div>
-
-                <!-- Cross-Platform Solutions -->
-                <div class="skill-category">
-                    <h3>📱 Cross-Platform Solutions</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">React Native:</span> Redux, React Navigation, Native Modules, Performance Optimization</li>
-                        <li><span class="highlight">Flutter:</span> Dart, Widget Architecture, State Management (Bloc, Provider)</li>
-                        <li><span class="highlight">Hybrid Frameworks:</span> Cordova, PhoneGap, Ionic for rapid prototyping</li>
-                        <li><span class="highlight">Code Sharing:</span> Shared business logic, platform-specific UI implementations</li>
-                        <li><span class="highlight">Performance:</span> Native bridge optimization, memory management</li>
-                    </ul>
-                </div>
-
-                <!-- Advanced Features -->
-                <div class="skill-category">
-                    <h3>⭐ Advanced Features</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Real-time Communication:</span> WebSocket, Socket.io, Firebase Realtime Database</li>
-                        <li><span class="highlight">Push Notifications:</span> FCM, APNs, local notifications, rich media</li>
-                        <li><span class="highlight">Geolocation Services:</span> GPS, Maps integration, Location-based features</li>
-                        <li><span class="highlight">Camera & Media:</span> Camera integration, image processing, video recording</li>
-                        <li><span class="highlight">Biometric Authentication:</span> Fingerprint, Face ID, Touch ID integration</li>
-                    </ul>
-                </div>
-
-                <!-- Backend Integration -->
-                <div class="skill-category">
-                    <h3>🔗 Backend Integration</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Cloud Services:</span> Firebase, AWS Mobile Hub, Azure Mobile Apps</li>
-                        <li><span class="highlight">Authentication:</span> OAuth, JWT, Social login (Google, Facebook, Apple)</li>
-                        <li><span class="highlight">Analytics:</span> Google Analytics, Firebase Analytics, Crashlytics</li>
-                        <li><span class="highlight">Payment Integration:</span> Stripe, PayPal, In-app purchases, Google Pay</li>
-                        <li><span class="highlight">Offline Sync:</span> Local caching, data synchronization, conflict resolution</li>
-                    </ul>
-                </div>
-
-                <!-- Testing & Deployment -->
-                <div class="skill-category">
-                    <h3>🧪 Testing & Deployment</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Testing Frameworks:</span> XCTest, Espresso, Jest, Detox for E2E testing</li>
-                        <li><span class="highlight">CI/CD Pipelines:</span> Fastlane, GitHub Actions, Jenkins, automated builds</li>
-                        <li><span class="highlight">App Store Optimization:</span> ASO strategies, metadata optimization</li>
-                        <li><span class="highlight">Beta Testing:</span> TestFlight, Firebase App Distribution, internal testing</li>
-                        <li><span class="highlight">Performance Monitoring:</span> Crashlytics, New Relic, application performance tuning</li>
-                    </ul>
-                </div>
+        <div class="skill-box">
+            <h4>Backend &amp; APIs</h4>
+            <div class="tags">
+                <span class="tag green">ASP.NET Core</span><span class="tag green">Node.js</span><span class="tag green">NestJS</span>
+                <span class="tag green">Django</span><span class="tag green">FastAPI</span><span class="tag green">GraphQL</span>
+                <span class="tag green">SignalR</span><span class="tag green">gRPC</span>
             </div>
         </div>
-    </section>
-
-    <!-- Web Development Expertise -->
-    <section class="section">
-        <h2 class="section-title">🌐 Web Development Expertise</h2>
-        <div class="section-content">
-            <p class="summary-text">
-                Full-stack web development expertise spanning <span class="highlight">modern frontend frameworks</span>, <span class="highlight">robust backend systems</span>, and <span class="highlight">scalable cloud architectures</span>. Specialized in creating responsive, high-performance web applications and enterprise solutions.
-            </p>
-            
-            <div class="skills-grid">
-                <!-- Frontend Development -->
-                <div class="skill-category">
-                    <h3>🎨 Frontend Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Modern Frameworks:</span> React, Angular, Vue.js, Next.js, Nuxt.js</li>
-                        <li><span class="highlight">JavaScript/TypeScript:</span> ES6+, TypeScript, Modern JS patterns, async/await</li>
-                        <li><span class="highlight">CSS Technologies:</span> TailwindCSS, SCSS, Styled Components, CSS-in-JS</li>
-                        <li><span class="highlight">State Management:</span> Redux, MobX, Vuex, Context API, Zustand</li>
-                        <li><span class="highlight">Build Tools:</span> Webpack, Vite, Parcel, Rollup, Babel transpilation</li>
-                    </ul>
-                </div>
-
-                <!-- Backend Development -->
-                <div class="skill-category">
-                    <h3>⚡ Backend Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">.NET Ecosystem:</span> ASP.NET Core, Web API, Entity Framework, SignalR</li>
-                        <li><span class="highlight">Node.js Stack:</span> Express.js, NestJS, Fastify, GraphQL, Socket.io</li>
-                        <li><span class="highlight">Python Frameworks:</span> Django, FastAPI, Flask, SQLAlchemy ORM</li>
-                        <li><span class="highlight">Database Systems:</span> SQL Server, PostgreSQL, MongoDB, Redis caching</li>
-                        <li><span class="highlight">Authentication:</span> JWT, OAuth 2.0, Identity Server, Multi-factor authentication</li>
-                    </ul>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="skill-category">
-                    <h3>☁️ Cloud & DevOps</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Cloud Platforms:</span> Azure, AWS, Google Cloud, Firebase Hosting</li>
-                        <li><span class="highlight">Containerization:</span> Docker, Kubernetes, Docker Compose, Microservices</li>
-                        <li><span class="highlight">CI/CD Pipelines:</span> GitHub Actions, Azure DevOps, Jenkins, GitLab CI</li>
-                        <li><span class="highlight">Infrastructure:</span> Terraform, ARM templates, Infrastructure as Code</li>
-                        <li><span class="highlight">Monitoring:</span> Application Insights, ELK Stack, Prometheus, Grafana</li>
-                    </ul>
-                </div>
-
-                <!-- API Development -->
-                <div class="skill-category">
-                    <h3>🔄 API Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">RESTful APIs:</span> REST principles, OpenAPI/Swagger documentation</li>
-                        <li><span class="highlight">GraphQL:</span> Schema design, resolvers, Apollo Server, relay connections</li>
-                        <li><span class="highlight">Real-time APIs:</span> WebSocket, Server-Sent Events, SignalR hubs</li>
-                        <li><span class="highlight">API Security:</span> Rate limiting, CORS, API versioning, input validation</li>
-                        <li><span class="highlight">Integration:</span> Third-party APIs, payment gateways, social media APIs</li>
-                    </ul>
-                </div>
-
-                <!-- E-commerce & CMS -->
-                <div class="skill-category">
-                    <h3>🛒 E-commerce & CMS</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">E-commerce Platforms:</span> Custom shopping carts, payment processing, inventory</li>
-                        <li><span class="highlight">Content Management:</span> Headless CMS, WordPress customization, Strapi</li>
-                        <li><span class="highlight">Payment Integration:</span> Stripe, PayPal, Square, cryptocurrency payments</li>
-                        <li><span class="highlight">SEO Optimization:</span> Meta tags, structured data, sitemap generation</li>
-                        <li><span class="highlight">Performance:</span> CDN integration, caching strategies, image optimization</li>
-                    </ul>
-                </div>
-
-                <!-- Security & Performance -->
-                <div class="skill-category">
-                    <h3>🛡️ Security & Performance</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Web Security:</span> HTTPS, CSP, XSS protection, SQL injection prevention</li>
-                        <li><span class="highlight">Performance Optimization:</span> Code splitting, lazy loading, bundle optimization</li>
-                        <li><span class="highlight">Testing:</span> Unit testing, Integration testing, E2E testing (Cypress, Playwright)</li>
-                        <li><span class="highlight">Accessibility:</span> WCAG compliance, screen reader compatibility, keyboard navigation</li>
-                        <li><span class="highlight">Progressive Web Apps:</span> Service workers, offline functionality, push notifications</li>
-                    </ul>
-                </div>
+        <div class="skill-box">
+            <h4>Databases</h4>
+            <div class="tags">
+                <span class="tag amber">PostgreSQL</span><span class="tag amber">SQL Server</span><span class="tag amber">MongoDB</span>
+                <span class="tag amber">Redis</span><span class="tag amber">Supabase</span><span class="tag amber">Firebase</span>
+                <span class="tag amber">Elasticsearch</span>
             </div>
         </div>
-    </section>
-
-    <!-- Desktop Application Development -->
-    <section class="section">
-        <h2 class="section-title">🖥️ Desktop Application Development</h2>
-        <div class="section-content">
-            <p class="summary-text">
-                Comprehensive expertise in developing <span class="highlight">cross-platform desktop applications</span> for Windows, macOS, and Linux. Specialized in creating high-performance, native-feeling applications using modern frameworks and traditional desktop technologies.
-            </p>
-            
-            <div class="skills-grid">
-                <!-- .NET Desktop Development -->
-                <div class="skill-category">
-                    <h3>🪟 .NET Desktop Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">WPF Applications:</span> XAML, MVVM pattern, Data binding, Custom controls</li>
-                        <li><span class="highlight">WinForms:</span> Legacy application modernization, custom UI components</li>
-                        <li><span class="highlight">.NET MAUI:</span> Cross-platform development, shared UI, platform-specific features</li>
-                        <li><span class="highlight">UWP/WinUI:</span> Universal Windows Platform, modern Windows applications</li>
-                        <li><span class="highlight">Entity Framework:</span> Database integration, ORM patterns, data management</li>
-                    </ul>
-                </div>
-
-                <!-- Cross-Platform Frameworks -->
-                <div class="skill-category">
-                    <h3>🌍 Cross-Platform Frameworks</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Electron:</span> Web technologies for desktop, Node.js integration, native APIs</li>
-                        <li><span class="highlight">Tauri:</span> Rust-based framework, lightweight applications, security-focused</li>
-                        <li><span class="highlight">Qt Framework:</span> C++ development, cross-platform GUI, high performance</li>
-                        <li><span class="highlight">Flutter Desktop:</span> Dart language, consistent UI across platforms</li>
-                        <li><span class="highlight">JavaFX:</span> Rich client applications, modern Java UI toolkit</li>
-                    </ul>
-                </div>
-
-                <!-- Native Platform Development -->
-                <div class="skill-category">
-                    <h3>💻 Native Platform Development</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Windows Native:</span> Win32 API, COM components, Windows Services</li>
-                        <li><span class="highlight">macOS Development:</span> Cocoa, Swift for Mac, Objective-C, Xcode</li>
-                        <li><span class="highlight">Linux Development:</span> GTK+, KDE/Qt, command-line utilities</li>
-                        <li><span class="highlight">System Integration:</span> Registry access, file system operations, hardware APIs</li>
-                        <li><span class="highlight">Performance Optimization:</span> Memory management, multi-threading, native code</li>
-                    </ul>
-                </div>
-
-                <!-- Enterprise Desktop Solutions -->
-                <div class="skill-category">
-                    <h3>🏢 Enterprise Desktop Solutions</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Business Applications:</span> ERP clients, CRM software, inventory management</li>
-                        <li><span class="highlight">Database Applications:</span> SQL Server integration, data visualization, reporting</li>
-                        <li><span class="highlight">Office Integration:</span> Microsoft Office add-ins, document automation</li>
-                        <li><span class="highlight">Network Applications:</span> Client-server architecture, TCP/UDP communication</li>
-                        <li><span class="highlight">Security Features:</span> Encryption, user authentication, secure data storage</li>
-                    </ul>
-                </div>
-
-                <!-- Specialized Applications -->
-                <div class="skill-category">
-                    <h3>🔧 Specialized Applications</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Media Applications:</span> Image/video processing, multimedia playback, codecs</li>
-                        <li><span class="highlight">System Utilities:</span> File managers, system monitors, automation tools</li>
-                        <li><span class="highlight">Development Tools:</span> Code editors, IDEs, debugging utilities</li>
-                        <li><span class="highlight">Scientific Software:</span> Data analysis, mathematical computing, visualization</li>
-                        <li><span class="highlight">Gaming Applications:</span> Game engines, graphics programming, DirectX/OpenGL</li>
-                    </ul>
-                </div>
-
-                <!-- Deployment & Distribution -->
-                <div class="skill-category">
-                    <h3>🚀 Deployment & Distribution</h3>
-                    <ul class="text-sm space-y-1">
-                        <li><span class="highlight">Windows Deployment:</span> MSI packages, ClickOnce, Windows Store distribution</li>
-                        <li><span class="highlight">macOS Distribution:</span> App Store, DMG packages, notarization, code signing</li>
-                        <li><span class="highlight">Linux Packages:</span> AppImage, Snap packages, Flatpak, repository distribution</li>
-                        <li><span class="highlight">Auto-Updates:</span> Automatic update mechanisms, version management</li>
-                        <li><span class="highlight">Installation:</span> Custom installers, dependency management, silent installation</li>
-                    </ul>
-                </div>
+        <div class="skill-box">
+            <h4>Cloud &amp; DevOps</h4>
+            <div class="tags">
+                <span class="tag purple">Docker</span><span class="tag purple">Kubernetes</span><span class="tag purple">AWS</span>
+                <span class="tag purple">Azure</span><span class="tag purple">GCP</span><span class="tag purple">Terraform</span>
+                <span class="tag purple">GitHub Actions</span>
             </div>
         </div>
-    </section>
+        <div class="skill-box">
+            <h4>Mobile &amp; Desktop</h4>
+            <div class="tags">
+                <span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">.NET MAUI</span>
+                <span class="tag">Electron</span><span class="tag">Tauri</span><span class="tag">SwiftUI</span>
+                <span class="tag">WPF</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI & ML -->
+    <h2>AI &amp; Machine Learning</h2>
+    <div class="skills-grid">
+        <div class="skill-box">
+            <h4>Deep Learning</h4>
+            <div class="tags">
+                <span class="tag purple">TensorFlow</span><span class="tag purple">PyTorch</span><span class="tag purple">Keras</span>
+                <span class="tag purple">CNNs</span><span class="tag purple">Transformers</span><span class="tag purple">GANs</span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <h4>NLP &amp; LLMs</h4>
+            <div class="tags">
+                <span class="tag cyan">GPT Fine-tuning</span><span class="tag cyan">LangChain</span><span class="tag cyan">RAG</span>
+                <span class="tag cyan">Hugging Face</span><span class="tag cyan">BERT</span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <h4>Computer Vision &amp; Data Science</h4>
+            <div class="tags">
+                <span class="tag green">OpenCV</span><span class="tag green">YOLO</span><span class="tag green">Scikit-learn</span>
+                <span class="tag green">Pandas</span><span class="tag green">XGBoost</span><span class="tag green">MLflow</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blockchain -->
+    <h2>Blockchain &amp; Web3</h2>
+    <div class="skills-grid">
+        <div class="skill-box">
+            <h4>Custom Blockchain Dev</h4>
+            <div class="tags">
+                <span class="tag amber">Blockcore</span><span class="tag amber">PoS/PoW</span><span class="tag amber">Custom Chains</span>
+                <span class="tag amber">Full Node</span><span class="tag amber">Block Explorer</span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <h4>Bitcoin &amp; Smart Contracts</h4>
+            <div class="tags">
+                <span class="tag">Bitcoin Core</span><span class="tag">Lightning</span><span class="tag">PSBT</span>
+                <span class="tag">Solidity</span><span class="tag">DeFi</span><span class="tag">Hardhat</span>
+            </div>
+        </div>
+        <div class="skill-box">
+            <h4>Identity &amp; Enterprise</h4>
+            <div class="tags">
+                <span class="tag green">Nostr</span><span class="tag green">DID</span><span class="tag green">Self-Sovereign ID</span>
+                <span class="tag green">Hyperledger</span><span class="tag green">KYC/AML</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
 
     <!-- Professional Experience -->
-    <section class="section">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="section-content">
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Founder & CEO</div>
-                    <div class="experience-period">2022 – Present</div>
-                </div>
-                <div class="experience-company">SBC (Senior BlockChain LLC) - Grade 1 Company, Oman</div>
-                <ul class="experience-description">
-                    <li>Founded and leading a Grade 1 blockchain technology company in Oman</li>
-                    <li>Providing enterprise blockchain solutions and consulting services</li>
-                    <li>Managing strategic partnerships and business development in the MENA region</li>
-                    <li>Overseeing development of cutting-edge blockchain applications and platforms</li>
-                </ul>
-            </div>
+    <h2>Professional Experience</h2>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Lead Developer</div>
-                    <div class="experience-period">2022 – Present</div>
-                </div>
-                <div class="experience-company">Angor - Decentralized Crowdfunding Platform</div>
-                <ul class="experience-description">
-                    <li>Designed and developed a decentralized crowdfunding platform integrating Bitcoin and Nostr protocol</li>
-                    <li>Led all aspects including UI/UX design, advanced coding, documentation, branding, and marketing</li>
-                    <li>Implemented Lightning Network payments, decentralized data storage, and blockchain-based identity systems</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Founder & Owner</div>
-                    <div class="experience-period">2015 – Present</div>
-                </div>
-                <div class="experience-company">BMS Company, Iran</div>
-                <ul class="experience-description">
-                    <li>Founded and managed a technology company providing software development and IT solutions</li>
-                    <li>Specialized in Odoo ERP development: Designed comprehensive ERP solutions using Python</li>
-                    <li>Enterprise System Integration: Successfully integrated Odoo with existing business systems</li>
-                    <li>Led multiple software development projects and managed technical teams</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Blockchain Developer</div>
-                    <div class="experience-period">2018 – Present</div>
-                </div>
-                <div class="experience-company">Blockcore</div>
-                <ul class="experience-description">
-                    <li>Collaborated in building a custom blockchain from scratch</li>
-                    <li>Developed blockchain applications for various use cases in cryptocurrency ecosystems</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Software Developer</div>
-                    <div class="experience-period">2008 – 2018</div>
-                </div>
-                <div class="experience-company">Various Projects</div>
-                <ul class="experience-description">
-                    <li>Created hundreds of applications for mobile, web, and desktop platforms</li>
-                    <li>Specialized in enterprise-level systems for Windows, Linux, and macOS</li>
-                    <li>Managed software projects including antivirus development and custom CMS based on ASP.NET</li>
-                </ul>
-            </div>
+    <div class="exp-item">
+        <div class="exp-header">
+            <span class="exp-role">Founder &amp; CEO</span>
+            <span class="exp-date">2022 - Present</span>
         </div>
-    </section>
+        <div class="exp-company">SBC (Senior BlockChain LLC) - Grade 1 Company, Muscat, Oman</div>
+        <ul class="exp-list">
+            <li>Founded and leading a Grade 1 blockchain and AI company in Oman specializing in enterprise solutions and large-scale software architecture.</li>
+            <li>Architected the online insurance platform for Oman - integrated with CMA regulations, local insurers (Dhofar, National Life, Al Ahlia, Vision, Oman United), and Omani bank gateways.</li>
+            <li>Developed international e-commerce platform with Aramex/DHL shipping, Visa/PayPal/Thawani payments, and multi-currency support.</li>
+            <li>Built custom AI models for insurance risk scoring and fraud detection serving regional clients.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-header">
+            <span class="exp-role">Lead Developer &amp; Architect</span>
+            <span class="exp-date">2022 - Present</span>
+        </div>
+        <div class="exp-company">Angor - Decentralized Crowdfunding Platform</div>
+        <ul class="exp-list">
+            <li>Designed and developed a Bitcoin-based decentralized crowdfunding platform with Nostr protocol and Lightning Network integration.</li>
+            <li>Led system architecture, UI/UX design, cryptographic implementation, documentation, and go-to-market strategy.</li>
+            <li>Implemented PSBT-based smart escrow, decentralized storage, and blockchain identity verification.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-header">
+            <span class="exp-role">Core Blockchain Developer</span>
+            <span class="exp-date">2018 - Present</span>
+        </div>
+        <div class="exp-company">Blockcore - Open Source Blockchain Platform</div>
+        <ul class="exp-list">
+            <li>Core contributor building custom blockchains from scratch - consensus engines, full-node implementations, wallets, and explorers.</li>
+            <li>Developed decentralized identity, tokenization platforms, and P2P payment networks.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-header">
+            <span class="exp-role">Founder &amp; Owner</span>
+            <span class="exp-date">2015 - Present</span>
+        </div>
+        <div class="exp-company">BMS Company - Tehran, Iran</div>
+        <ul class="exp-list">
+            <li>Founded a technology company delivering custom software, Odoo ERP solutions, and IT consulting for enterprise clients.</li>
+            <li>Built the Iranian online insurance platform integrating all major providers and Shaparak payment infrastructure.</li>
+            <li>Delivered custom Odoo ERP modules for manufacturing, healthcare, retail, and real estate sectors.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-header">
+            <span class="exp-role">Project Manager</span>
+            <span class="exp-date">Before 2018</span>
+        </div>
+        <div class="exp-company">National Oil Company - Iran</div>
+        <ul class="exp-list">
+            <li>Managed enterprise software projects including antivirus solutions and ASP.NET CMS platform for national energy infrastructure.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <div class="exp-header">
+            <span class="exp-role">Senior Software Developer</span>
+            <span class="exp-date">2008 - 2018</span>
+        </div>
+        <div class="exp-company">Freelance &amp; Contract</div>
+        <ul class="exp-list">
+            <li>Created 200+ applications across mobile, web, and desktop for fintech, healthcare, manufacturing, and government clients.</li>
+        </ul>
+    </div>
 
     <!-- Key Projects -->
-    <section class="section">
-        <h2 class="section-title">Key Projects</h2>
-        <div class="section-content">
-            <div class="projects-grid">
-                <div class="project-item">
-                    <div class="project-title">Angor Hub</div>
-                    <div class="project-description">White-label crowdfunding platform for communities and brands using Bitcoin and Nostr protocol.</div>
+    <h2>Key Projects</h2>
+    <div class="projects-grid">
+        <div class="project-box">
+            <h3>Angor - Decentralized Crowdfunding</h3>
+            <p>Bitcoin-based platform with Nostr, Lightning, and PSBT smart escrow for trustless investment.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag">Bitcoin</span><span class="tag cyan">Nostr</span><span class="tag amber">Lightning</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>Insurance Platform - Oman</h3>
+            <p>CMA-compliant system with Omani insurers, real-time quotes, claims tracking, and Omani bank gateways.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag green">Next.js</span><span class="tag amber">PostgreSQL</span><span class="tag purple">CMA</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>Insurance Platform - Iran</h3>
+            <p>All Iranian insurers integrated, multiple products, Shaparak gateway, Bimeh Markazi APIs.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag cyan">ASP.NET</span><span class="tag amber">SQL Server</span><span class="tag green">Shaparak</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>International E-Commerce</h3>
+            <p>Multi-vendor with Aramex/DHL/FedEx, Visa/PayPal/Thawani, multi-currency, GCC tax automation.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag amber">Next.js</span><span class="tag">Aramex</span><span class="tag purple">PayPal</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>SeniorBlockchain Identity</h3>
+            <p>Decentralized identity with TrustPulse scoring, verifiable credentials on Nostr and Bitcoin.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag purple">DID</span><span class="tag green">Nostr</span><span class="tag">Web3</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>Custom Blockchain Networks</h3>
+            <p>Multiple chains from scratch with Blockcore - consensus, full nodes, wallets, explorers, staking.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag amber">C#</span><span class="tag">Blockcore</span><span class="tag green">PoS</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>Enterprise ERP (Odoo)</h3>
+            <p>Custom Python modules for manufacturing, healthcare, real estate, retail - HR, CRM, accounting.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag green">Python</span><span class="tag amber">Odoo</span><span class="tag">PostgreSQL</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>AI Business Intelligence</h3>
+            <p>ML models for insurance risk, fraud detection, churn prediction, NLP pipelines, recommendation engines.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag purple">TensorFlow</span><span class="tag green">NLP</span><span class="tag cyan">MLOps</span>
+            </div>
+        </div>
+        <div class="project-box">
+            <h3>Tokenize - Asset Tokenization</h3>
+            <p>Fractional ownership of real-world assets on Bitcoin/Nostr with compliance-first architecture.</p>
+            <div class="tags" style="margin-top:4pt">
+                <span class="tag">Bitcoin</span><span class="tag purple">RWA</span><span class="tag cyan">React</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education & Languages -->
+    <div class="two-col">
+        <div>
+            <h2>Education</h2>
+            <div class="skill-box">
+                <h3>Bachelor's Degree - Mathematics &amp; Computer Science</h3>
+                <p>Algorithms, data structures, mathematical modeling, computational theory - foundation for AI/ML and blockchain cryptography.</p>
+            </div>
+        </div>
+        <div>
+            <h2>Languages</h2>
+            <div class="skill-box">
+                <div style="margin-bottom:8pt">
+                    <div style="display:flex;justify-content:space-between"><strong style="font-size:8.5pt">Persian (Farsi)</strong><span style="font-size:7pt;color:#059669">Native</span></div>
+                    <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
                 </div>
-                <div class="project-item">
-                    <div class="project-title">Tokenize</div>
-                    <div class="project-description">Asset tokenization system based on Bitcoin and Nostr for decentralized asset management.</div>
+                <div style="margin-bottom:8pt">
+                    <div style="display:flex;justify-content:space-between"><strong style="font-size:8.5pt">English</strong><span style="font-size:7pt;color:#3b82f6">Professional</span></div>
+                    <div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div>
                 </div>
-                <div class="project-item">
-                    <div class="project-title">NostrID</div>
-                    <div class="project-description">Decentralized identity and reputation system with TrustPulse scoring mechanism.</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">Custom Blockchain</div>
-                    <div class="project-description">Built comprehensive blockchain solution with the Blockcore team from scratch.</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">Enterprise Odoo Solutions</div>
-                    <div class="project-description">Comprehensive ERP implementations with custom Python modules for manufacturing, healthcare, and retail.</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">Enterprise CMS</div>
-                    <div class="project-description">ASP.NET-based content management system for enterprise-level content management.</div>
+                <div>
+                    <div style="display:flex;justify-content:space-between"><strong style="font-size:8.5pt">Arabic</strong><span style="font-size:7pt;color:#f59e0b">Basic</span></div>
+                    <div class="lang-bar"><div class="lang-fill" style="width:30%"></div></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Currently Building -->
-    <section class="section">
-        <h2 class="section-title">🔨 Currently Building</h2>
-        <div class="section-content">
-            <div class="projects-grid">
-                <div class="project-item">
-                    <div class="project-title">🚀 Angor</div>
-                    <div class="project-description">Decentralized Bitcoin crowdfunding platform empowering creators and investors through Bitcoin's decentralized network.</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">🛡️ SeniorBlockchain Platform</div>
-                    <div class="project-description">Decentralizing identity for a better, more secure future through innovative blockchain technology.</div>
-                </div>
-                <div class="project-item">
-                    <div class="project-title">🌐 Open-Source Contributions</div>
-                    <div class="project-description">Contributing to the blockchain ecosystem and building projects that empower society and inspire positive change.</div>
-                </div>
-            </div>
+    <!-- Design -->
+    <h2>Design &amp; Creative</h2>
+    <div class="skills-grid">
+        <div class="skill-box">
+            <h4>UI/UX &amp; Branding</h4>
+            <div class="tags"><span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span></div>
         </div>
-    </section>
-
-    <!-- Education and Languages -->
-    <section class="section">
-        <h2 class="section-title">Education & Languages</h2>
-        <div class="section-content">
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="info-title">Education</div>
-                    <p><span class="font-semibold">Bachelor's Degree</span><br>
-                    Mathematics and Computer Science</p>
-                </div>
-                <div class="info-item">
-                    <div class="info-title">Languages</div>
-                    <div class="language-item">
-                        <span class="font-semibold">Persian</span>
-                        <span class="language-level">Native</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="font-semibold">English</span>
-                        <span class="language-level professional">Intermediate</span>
-                    </div>
-                </div>
-            </div>
+        <div class="skill-box">
+            <h4>Motion &amp; Video</h4>
+            <div class="tags"><span class="tag purple">After Effects</span><span class="tag purple">Premiere Pro</span><span class="tag purple">Motion Graphics</span></div>
         </div>
-    </section>
+        <div class="skill-box">
+            <h4>Print &amp; Graphics</h4>
+            <div class="tags"><span class="tag cyan">CorelDRAW</span><span class="tag cyan">InDesign</span><span class="tag cyan">Visual Identity</span></div>
+        </div>
+    </div>
 
-    <!-- Footer for Screen View -->
-    <footer class="no-print text-center footer-screen">
-        <p class="footer-text">
-            <strong>Let's connect and build something amazing together!</strong><br>
-            📧 miladsoft@yahoo.com | 📱 +968 9120 0634 | 📍 Oman
-        </p>
-    </footer>
 </body>
 </html>
