@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milad Raeisi - Senior Software Architect & AI/Blockchain Expert</title>
-    <meta name="description" content="Milad Raeisi - Senior Full-Stack Developer, AI & Machine Learning Specialist, Blockchain Architect, and Entrepreneur based in Oman.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Milad Raeisi - Blockchain Developer & AI Architect</title>
+    <meta name="description" content="Milad Raeisi - Blockchain Developer and AI Architect, core member at Blockcore and Angor, founder of Senior Blockchain in Oman.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
+        @font-face{
+            font-family:'SBC';
+            src:url('fonts/sbc.otf') format('opentype');
+            font-weight:400 900;
+            font-style:normal;
+            font-display:swap;
+        }
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
             --primary:#0f172a;--accent:#3b82f6;--accent2:#8b5cf6;
@@ -18,7 +22,7 @@
             --card-border:#334155;--radius:16px;
         }
         html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-        body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--primary);color:var(--text);line-height:1.7;overflow-x:hidden}
+        body{font-family:'SBC',system-ui,-apple-system,sans-serif;background:var(--primary);color:var(--text);line-height:1.7;overflow-x:hidden}
         ::selection{background:var(--accent);color:#fff}
         ::-webkit-scrollbar{width:6px}
         ::-webkit-scrollbar-track{background:var(--primary)}
@@ -63,16 +67,16 @@
         .hero-badge .dot{width:8px;height:8px;background:var(--accent4);border-radius:50%;animation:pulse-glow 2s infinite}
         .hero h1{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:16px;letter-spacing:-1.5px}
         .hero h1 .gradient{color:#fff}
-        .hero-subtitle{font-size:clamp(1rem,2.5vw,1.35rem);color:var(--text2);max-width:700px;margin-bottom:32px;font-weight:400}
+        .hero-subtitle{font-size:clamp(1rem,2.5vw,1.35rem);color:var(--text2);margin-bottom:32px;font-weight:400}
         .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:36px;max-width:600px}
         @media(min-width:640px){.hero-stats{grid-template-columns:repeat(4,1fr)}}
-        .stat{text-align:center;padding:16px 8px}
-        .stat-num{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .stat{text-align:left;padding:16px 8px}
+        .stat-num{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
         .stat-label{font-size:.75rem;color:var(--text2);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
         .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
         .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
-        .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(59,130,246,.3)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(59,130,246,.4)}
+        .btn-primary{background:var(--accent);color:#fff}
+        .btn-primary:hover{background:#2563eb;transform:translateY(-2px)}
         .btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}
         .btn-outline:hover{border-color:var(--accent);color:var(--accent);background:rgba(59,130,246,.05)}
         .contact-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px}
@@ -90,8 +94,11 @@
         .section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-1px;line-height:1.2}
 
         /* Cards */
-        .card{background:linear-gradient(180deg,rgba(30,41,59,.95) 0%,rgba(30,41,59,.88) 100%);border:none;border-radius:var(--radius);padding:28px;transition:transform .3s ease,background .3s ease;position:relative;overflow:hidden}
-        .card:hover{transform:translateY(-4px);background:linear-gradient(180deg,rgba(51,65,85,.92) 0%,rgba(30,41,59,.9) 100%)}
+        .card{background:rgba(255,255,255,.04);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px;transition:transform .3s ease,background .3s ease,border-color .3s ease;position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),var(--glow-color,rgba(59,130,246,.12)),transparent 40%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:0}
+        .card:hover::before{opacity:1}
+        .card>*{position:relative;z-index:1}
+        .card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
 
         /* Skills Grid */
         .skills-grid{display:grid;grid-template-columns:1fr;gap:16px}
@@ -196,7 +203,7 @@
             .card,.skill-card,.project-card{border:none;box-shadow:none;background:#fff}
             .hero{min-height:auto;padding:20px 0}
             .section{padding:20px 0}
-            *{color:#1f2937!important;-webkit-print-color-adjust:exact}
+            *{color:#1f2937!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
         }
     </style>
 </head>
@@ -210,7 +217,7 @@
                 <a href="#skills">Skills</a>
                 <a href="#ai">AI &amp; ML</a>
                 <a href="#blockchain">Blockchain</a>
-                <a href="#projects">Projects</a>
+                <a href="#projects">Work</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -226,7 +233,7 @@
         <a href="#skills" onclick="toggleMenu()">Skills</a>
         <a href="#ai" onclick="toggleMenu()">AI &amp; ML</a>
         <a href="#blockchain" onclick="toggleMenu()">Blockchain</a>
-        <a href="#projects" onclick="toggleMenu()">Projects</a>
+        <a href="#projects" onclick="toggleMenu()">Work</a>
         <a href="#experience" onclick="toggleMenu()">Experience</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
     </div>
@@ -236,16 +243,16 @@
         <div class="container hero-content">
             <h1 class="animate-fade-up delay-1" style="color:#fff">Milad Raeisi</h1>
             <p class="hero-subtitle animate-fade-up delay-2">
-                Senior Software Architect, AI/ML Specialist, Blockchain Expert, and Entrepreneur - building scalable enterprise systems, custom blockchains, and intelligent solutions across the MENA region and beyond.
+                Blockchain Developer and AI Architect building scalable enterprise systems, decentralized solutions, and intelligent products. Core member at Blockcore and Angor, founder of Senior Blockchain in Oman.
             </p>
             <div class="hero-stats animate-fade-up delay-3">
-                <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Years Exp.</div></div>
+                <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Years Exp.</div></div>
                 <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Projects</div></div>
-                <div class="stat"><div class="stat-num">50+</div><div class="stat-label">AI Models</div></div>
-                <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Blockchains</div></div>
+                <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Clients</div></div>
+                <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Industries</div></div>
             </div>
             <div class="hero-cta animate-fade-up delay-4">
-                <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Work</a>
                 <a href="print.html" class="btn btn-outline"><i class="fas fa-file-alt"></i> Download CV</a>
             </div>
             <div class="contact-row animate-fade-up delay-5">
@@ -417,7 +424,7 @@
             </div>
             <div class="card animate-fade-up" style="margin-bottom:28px">
                 <p style="font-size:.95rem;color:var(--text2);line-height:1.8">
-                    Core contributor to <strong style="color:var(--accent)">Blockcore</strong> - building custom blockchains from scratch. Deep expertise in Bitcoin protocol, Lightning Network, Nostr, decentralized identity, smart contracts, and DeFi. Architecting private and public blockchain networks for government and enterprise clients, including custom consensus mechanisms, tokenization platforms, and cross-chain interoperability solutions.
+                    Core member at <strong style="color:var(--accent)">Blockcore</strong> and <strong style="color:var(--accent2)">Angor</strong>, building custom blockchains, decentralized infrastructure, and Bitcoin-native funding solutions. Deep expertise in Bitcoin, Lightning, Nostr, decentralized identity, smart contracts, and enterprise blockchain architecture for real-world products.
                 </p>
             </div>
             <div class="skills-grid">
@@ -486,8 +493,8 @@
     <section class="section" id="projects" style="background:linear-gradient(180deg,rgba(59,130,246,.03) 0%,transparent 100%)">
         <div class="container">
             <div class="section-header animate-fade-up">
-                <div class="section-tag"><i class="fas fa-rocket"></i> Portfolio</div>
-                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-tag"><i class="fas fa-rocket"></i> Work</div>
+                <h2 class="section-title">Selected Work</h2>
             </div>
             <div class="projects-grid">
                 <!-- Angor -->
@@ -608,7 +615,7 @@
         <div class="container">
             <div class="section-header animate-fade-up">
                 <div class="section-tag"><i class="fas fa-briefcase"></i> Career</div>
-                <h2 class="section-title">Professional Experience</h2>
+                <h2 class="section-title">Work Experience</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item animate-fade-up">
@@ -619,7 +626,7 @@
                         </div>
                         <div class="exp-company">SBC (Senior BlockChain LLC) - Grade 1 Company, Muscat, Oman</div>
                         <ul class="exp-list">
-                            <li>Founded and leading a Grade 1 blockchain technology company in Oman specializing in enterprise blockchain solutions, AI/ML consulting, and large-scale software architecture.</li>
+                            <li>Founded and leading a Grade 1 blockchain technology company in Oman specializing in enterprise blockchain solutions, AI-powered automation, and large-scale software architecture.</li>
                             <li>Architected and delivered the online insurance platform for the Omani market - integrated with CMA regulations, local insurers, and Omani banking payment gateways.</li>
                             <li>Developed international e-commerce platform with Aramex/DHL logistics, multi-currency support, and Visa/PayPal/Thawani payment processing.</li>
                             <li>Built custom AI models for insurance risk scoring and fraud detection serving Omani and regional clients.</li>
@@ -630,7 +637,7 @@
                 <div class="timeline-item animate-fade-up delay-1">
                     <div class="card">
                         <div class="exp-header">
-                            <div class="exp-role">Lead Developer &amp; Architect</div>
+                            <div class="exp-role">Core Member &amp; Lead Architect</div>
                             <div class="exp-date">2022 - Present</div>
                         </div>
                         <div class="exp-company">Angor - Decentralized Crowdfunding Platform</div>
@@ -644,7 +651,7 @@
                 <div class="timeline-item animate-fade-up delay-2">
                     <div class="card">
                         <div class="exp-header">
-                            <div class="exp-role">Core Blockchain Developer</div>
+                            <div class="exp-role">Core Member</div>
                             <div class="exp-date">2018 - Present</div>
                         </div>
                         <div class="exp-company">Blockcore - Open Source Blockchain Platform</div>
@@ -833,7 +840,7 @@
                 <a href="https://github.com/miladsoft" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/miladraeisi/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p>&copy; 2024 Milad Raeisi. Built with precision.</p>
+                <p>&copy; <span id="currentYear">2026</span> Milad Raeisi. Building the future of decentralized finance and intelligent blockchain solutions.</p>
         </div>
     </footer>
 
@@ -842,6 +849,7 @@
 
     <script>
         const nav=document.getElementById('nav'),backTop=document.getElementById('backTop');
+            document.getElementById('currentYear').textContent=new Date().getFullYear();
         window.addEventListener('scroll',()=>{
             nav.classList.toggle('scrolled',window.scrollY>50);
             backTop.classList.toggle('visible',window.scrollY>400);
@@ -862,6 +870,19 @@
                 const t=s.offsetTop,h=s.offsetHeight,id=s.getAttribute('id');
                 const l=document.querySelector('.nav-links a[href="#'+id+'"]');
                 if(l)l.classList.toggle('active',y>=t&&y<t+h);
+            });
+        });
+        document.querySelectorAll('.card').forEach(card=>{
+            const icon=card.querySelector('[class*="icon-"]');
+            if(icon){
+                const cls=icon.className;
+                const colors={blue:'59,130,246',purple:'139,92,246',cyan:'6,182,212',green:'16,185,129',amber:'245,158,11',red:'239,68,68',pink:'236,72,153'};
+                for(const[k,v]of Object.entries(colors)){if(cls.includes('icon-'+k)){card.style.setProperty('--glow-color','rgba('+v+',.12)');break}}
+            }
+            card.addEventListener('mousemove',e=>{
+                const r=card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x',e.clientX-r.left+'px');
+                card.style.setProperty('--mouse-y',e.clientY-r.top+'px');
             });
         });
     </script>
