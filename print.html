@@ -1,430 +1,277 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milad Raeisi - Blockchain Developer & AI Architect (Print Version)</title>
-    <style>
-        @font-face{font-family:'SBC';src:url('fonts/sbc.otf') format('opentype');font-weight:400 900;font-style:normal;font-display:swap}
-        @page{size:A4;margin:1.5cm 1.2cm}
-        *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-        body{font-family:'SBC',system-ui,sans-serif;font-size:9.5pt;line-height:1.45;color:#1e293b;background:#fff;max-width:210mm;margin:0 auto;padding:20px}
-        h1{font-size:22pt;font-weight:800;letter-spacing:-1px;color:#0f172a}
-        h2{font-size:12pt;font-weight:700;color:#1e40af;border-bottom:2px solid #3b82f6;padding-bottom:3px;margin:16pt 0 8pt}
-        h3{font-size:10pt;font-weight:700;color:#1e293b;margin-bottom:4pt}
-        h4{font-size:9pt;font-weight:600;color:#3b82f6;margin-bottom:3pt}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238e8ef5'/%3E%3Cstop offset='.5' stop-color='%235b5bd6'/%3E%3Cstop offset='1' stop-color='%232f2f8f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='-apple-system,BlinkMacSystemFont,Helvetica Neue,Arial,sans-serif' font-size='25' font-weight='600' letter-spacing='-0.5' fill='%23fff'%3EMR%3C/text%3E%3C/svg%3E">
+<title>Milad Raeisi · Resume</title>
+<meta name="description" content="Resume of Milad Raeisi. Systems Architect, ERP Systems Analyst, Blockchain & AI Engineer.">
+<!-- Printable resume. Content mirrors web/src/data.ts, keep both in sync.
+     Regenerate the PDF with `npm run pdf` inside web/. -->
+<style>
+@font-face{font-family:'Inter';src:url('fonts/inter-var.woff2') format('woff2');font-weight:100 900;font-display:block}
+@page{size:A4;margin:9mm 13mm 11mm}
+@page{@bottom-left{content:"Milad Raeisi · Resume";font:7pt -apple-system,'Helvetica Neue','Inter',sans-serif;color:#a3a3a3}
+      @bottom-right{content:"Page " counter(page) " of " counter(pages);font:7pt -apple-system,'Helvetica Neue','Inter',sans-serif;color:#a3a3a3}}
+:root{--ink:#1d1d1f;--text:#424245;--muted:#6e6e73;--line:#e5e5ea;--soft:#f5f5f7;--brand:#5b5bd6;--brand-soft:#eeeefc}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue','Inter',system-ui,sans-serif;font-size:8.4pt;line-height:1.4;font-feature-settings:'cv11','ss01';color:var(--text);background:#fff}
+.page{max-width:182mm;margin:0 auto}
+a{color:inherit;text-decoration:none}
 
-        .header{text-align:center;padding:16pt 0 12pt;border-bottom:2px solid #e2e8f0;margin-bottom:12pt}
-        .header .subtitle{font-size:11pt;color:#475569;font-weight:500;margin:4pt 0}
-        .header .tagline{font-size:9pt;color:#64748b;margin-bottom:8pt}
-        .contact-row{display:flex;justify-content:center;gap:20pt;font-size:8.5pt;color:#475569;flex-wrap:wrap}
-        .contact-row span{display:flex;align-items:center;gap:4pt}
+/* Header */
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:10mm;padding-bottom:4mm;border-bottom:.8pt solid var(--ink)}
+.brand{display:flex;align-items:center;gap:3.5mm}
+h1{font-size:26pt;line-height:1;font-weight:600;letter-spacing:-.6pt;color:var(--ink)}
+h1 span{font-weight:400;color:var(--ink)}
+.role{margin-top:2mm;font-size:9pt;font-weight:500;color:var(--text)}
+.contact{list-style:none;text-align:right;font-size:7.6pt;line-height:1.6;color:var(--text)}
+.contact li{display:flex;align-items:center;justify-content:flex-end;gap:1.6mm}
+.contact svg{width:2.9mm;height:2.9mm;color:#a3a3a3}
 
-        .summary{font-size:9pt;color:#475569;line-height:1.5;margin-bottom:12pt;text-align:justify}
+/* Sections */
+section{margin-top:4.2mm}
+h2{break-after:avoid;display:flex;align-items:center;gap:2.5mm;font-size:8pt;font-weight:600;letter-spacing:1.6pt;text-transform:uppercase;color:var(--ink);margin-bottom:2.6mm}
+h2::after{content:'';flex:1;height:.6pt;background:var(--line)}
+h2 i{display:inline-block;width:1.4mm;height:1.4mm;border-radius:50%;background:var(--brand);font-style:normal}
 
-        .skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8pt;margin-bottom:10pt}
-        .skill-box{border:1px solid #e2e8f0;border-radius:6px;padding:8pt}
-        .skill-box h4{margin-bottom:4pt}
-        .skill-box p{font-size:7.5pt;color:#64748b;line-height:1.35}
-        .tags{display:flex;flex-wrap:wrap;gap:3pt;margin-top:4pt}
-        .tag{background:#eff6ff;color:#1e40af;padding:1.5pt 6pt;border-radius:3px;font-size:7pt;font-weight:500}
-        .tag.green{background:#ecfdf5;color:#065f46}
-        .tag.purple{background:#f5f3ff;color:#5b21b6}
-        .tag.amber{background:#fffbeb;color:#92400e}
-        .tag.cyan{background:#ecfeff;color:#155e75}
+.summary{font-size:8.7pt;line-height:1.5;color:var(--text);text-align:justify}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin-top:3.5mm}
+.stats div{border:.6pt solid var(--line);border-radius:2.6mm;padding:2mm 3mm;background:linear-gradient(135deg,#fff,var(--soft))}
+.stats b{display:block;font-size:14pt;font-weight:600;letter-spacing:-.4pt;color:var(--ink);line-height:1.1}
+.stats b em{font-style:normal;color:var(--brand)}
+.stats span{font-size:6.6pt;letter-spacing:.5pt;text-transform:uppercase;color:var(--muted)}
 
-        .exp-item{border-left:2px solid #3b82f6;padding-left:10pt;margin-bottom:10pt;page-break-inside:avoid}
-        .exp-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2pt}
-        .exp-role{font-size:10pt;font-weight:700;color:#1e40af}
-        .exp-date{font-size:7.5pt;color:#64748b;font-weight:500}
-        .exp-company{font-size:8.5pt;font-weight:600;color:#334155;margin-bottom:4pt}
-        .exp-list{list-style:none;padding:0}
-        .exp-list li{font-size:8pt;color:#475569;padding-left:12pt;position:relative;margin-bottom:2pt;line-height:1.4}
-        .exp-list li::before{content:'\2022';position:absolute;left:0;color:#3b82f6;font-weight:bold}
+/* Experience */
+.job{display:grid;grid-template-columns:27mm 1fr;gap:4mm;padding:2mm 0;border-top:.6pt solid var(--line);break-inside:avoid}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{font-size:7.4pt;font-weight:600;color:var(--muted);padding-top:.5mm}
+.job h3{font-size:9.6pt;font-weight:600;color:var(--ink);line-height:1.25}
+.job .org{font-size:8.2pt;font-weight:500;color:var(--ink);margin-top:.3mm}
+.job .org span{font-weight:400;color:var(--muted)}
+.job ul{margin-top:1.3mm;padding-left:3.2mm}
+.job li b{font-weight:600;color:var(--ink)}
+.job li{margin-bottom:.6mm;font-size:8pt;line-height:1.42}
+.job li::marker{color:#a3a3a3}
+.job.featured{margin:1mm 0;padding:3mm 3.5mm;border:.8pt solid #c9c9f3;border-radius:3.2mm;background:linear-gradient(135deg,#fff 40%,var(--brand-soft))}
+.job.featured + .job{border-top:0}
+.badge{display:inline-block;margin-left:1.5mm;padding:.3mm 1.6mm;border-radius:.8mm;background:var(--brand);color:#fff;font-size:6.2pt;font-weight:700;letter-spacing:.4pt;vertical-align:1pt;text-transform:uppercase}
 
-        .projects-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8pt;margin-bottom:12pt}
-        .project-box{border:1px solid #e2e8f0;border-radius:6px;padding:8pt;page-break-inside:avoid}
-        .project-box h3{font-size:8.5pt;color:#1e40af;margin-bottom:3pt}
-        .project-box p{font-size:7pt;color:#64748b;line-height:1.35}
+/* ERP block */
+.erp{border:.6pt solid var(--line);border-radius:3.2mm;background:linear-gradient(135deg,#fff 55%,var(--soft));padding:3.2mm 3.6mm;break-inside:avoid}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:2mm;counter-reset:s}
+.steps div{counter-increment:s;font-size:7pt;line-height:1.35;color:var(--muted)}
+.steps div::before{content:"0" counter(s);display:block;font-size:8pt;font-weight:600;color:var(--brand);margin-bottom:.6mm}
+.steps b{display:block;font-size:8pt;font-weight:600;color:var(--ink);margin-bottom:.4mm}
+.kv{display:grid;grid-template-columns:27mm 1fr;gap:1mm 4mm;margin-top:3mm;padding-top:2.6mm;border-top:.6pt dashed var(--line);font-size:8pt}
+.kv dt{font-weight:600;color:var(--ink)}
 
-        .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12pt;margin-bottom:10pt}
-        .lang-bar{height:4pt;background:#e2e8f0;border-radius:2pt;margin-top:4pt;overflow:hidden}
-        .lang-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:2pt}
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm 4mm}
+.project{break-inside:avoid;padding-left:2.6mm;border-left:.8pt solid var(--line)}
+.project h3{font-size:8.6pt;font-weight:600;color:var(--ink)}
+.project p{font-size:7.4pt;line-height:1.38;margin-top:.3mm}
+.project small{display:block;margin-top:.5mm;font-size:6.9pt;font-weight:500;color:var(--muted)}
 
-        .highlight-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6pt;margin-bottom:10pt}
-        .hl-item{text-align:center;border:1px solid #e2e8f0;border-radius:6px;padding:6pt 4pt}
-        .hl-item strong{display:block;font-size:14pt;font-weight:800;color:#3b82f6}
-        .hl-item span{font-size:7pt;color:#64748b;text-transform:uppercase;letter-spacing:.5pt}
+/* Skills */
+.skills{display:grid;grid-template-columns:27mm 1fr;border-top:.6pt solid var(--line)}
+.skills dt,.skills dd{padding:.75mm 0;border-bottom:.6pt solid var(--line);font-size:7.8pt}
+.skills dt{font-weight:600;color:var(--ink)}
+.skills dd b{font-weight:600;color:var(--ink)}
+.skills dd{padding-left:4mm}
 
-        .page-break{page-break-before:always}
-        .no-break{page-break-inside:avoid}
 
-        @media screen{
-            body{padding:30px;max-width:900px}
-            .print-actions{position:fixed;top:20px;right:20px;display:flex;gap:8px;z-index:100}
-            .print-actions a,.print-actions button{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#1e293b;transition:all .2s}
-            .print-actions button{background:#3b82f6;color:#fff;border:none}
-            .print-actions a:hover{background:#f1f5f9}
-            .print-actions button:hover{background:#2563eb}
-        }
-        @media print{.print-actions{display:none!important}}
-    </style>
+.keep{break-inside:avoid}
+.break{break-before:page}
+
+@media screen{
+  body{background:#e2e8f0;padding:24px 12px 60px}
+  .page{background:#fff;padding:14mm;max-width:210mm;box-shadow:0 10px 40px rgb(15 23 42/.12);border-radius:6px}
+  .toolbar{position:sticky;top:12px;z-index:10;display:flex;justify-content:center;gap:8px;margin:0 auto 18px;max-width:210mm}
+  .toolbar a,.toolbar button{font:600 13px 'Inter',system-ui,sans-serif;padding:10px 18px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;cursor:pointer}
+  .toolbar .primary{background:#0f172a;color:#fff;border-color:#0f172a}
+}
+@media print{.toolbar{display:none}}
+</style>
 </head>
 <body>
-    <div class="print-actions">
-        <a href="index.html">&larr; Back to Website</a>
-        <button onclick="window.print()">Print / Save PDF</button>
+<nav class="toolbar">
+  <a href="./">← Website</a>
+  <a class="primary" href="Milad-Raeisi-CV.pdf" download>Download PDF</a>
+  <button onclick="window.print()">Print</button>
+</nav>
+
+<main class="page">
+<header>
+  <div class="brand">
+    <div>
+      <h1>Milad <span>Raeisi</span></h1>
+      <p class="role">Systems Architect · ERP Systems Analyst · Blockchain &amp; AI Engineer</p>
     </div>
+  </div>
+  <ul class="contact">
+    <li><a href="mailto:info@sbc.om">info@sbc.om</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></li>
+    <li><a href="tel:+96891200634">+968 9120 0634</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></li>
+    <li>Muscat, Oman<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></li>
+    <li><a href="https://milad.sbc.om">milad.sbc.om</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></li>
+    <li><a href="https://www.linkedin.com/in/miladraeisi/">linkedin.com/in/miladraeisi</a><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg></li>
+    <li><a href="https://github.com/miladsoft">github.com/miladsoft</a><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></li>
+  </ul>
+</header>
 
-    <!-- Header -->
-    <div class="header">
-        <h1>Milad Raeisi</h1>
-        <div class="subtitle">Blockchain Developer &bull; AI Architect &bull; Decentralized Systems Builder</div>
-        <div class="tagline">Core Member at Blockcore and Angor &bull; Founder of Senior Blockchain &bull; 20+ Years Experience</div>
-        <div class="contact-row">
-            <span>&#9742; +968 9120 0634</span>
-            <span>&#9993; miladsoft@yahoo.com</span>
-            <span>&#9872; Muscat, Oman</span>
-        </div>
+<section>
+  <h2><i></i>Profile</h2>
+  <p class="summary">Systems architect and full-stack engineer with 20+ years of designing and shipping enterprise software, from bespoke ERP platforms and regulated insurance systems to Bitcoin-native products and production AI. Founder &amp; CEO of SBC (Senior BlockChain LLC), a Grade 1 technology company in Muscat, and core member of Blockcore and Angor. Combines rigorous systems analysis with hands-on engineering: mapping how a business really runs, then turning it into reliable, scalable software.</p>
+  <div class="stats">
+    <div><b>20<em>+</em></b><span>Years experience</span></div>
+    <div><b>200<em>+</em></b><span>Projects delivered</span></div>
+    <div><b>50<em>+</em></b><span>Enterprise clients</span></div>
+    <div><b>10<em>+</em></b><span>Industries served</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><i></i>Professional Experience</h2>
+
+  <div class="job">
+    <div class="when">Since 2022</div>
+    <div>
+      <h3>Founder &amp; CEO</h3>
+      <p class="org">SBC (Senior BlockChain LLC) <span>· Grade 1 technology company · Muscat, Oman</span></p>
+      <ul>
+        <li>Founded and lead a Grade 1 company delivering enterprise software, custom ERP, blockchain infrastructure and AI automation across the MENA region.</li>
+        <li>Architected Oman’s online insurance platform: CMA compliant, integrated with Dhofar, National Life, Al Ahlia, Vision and Oman United Insurance, plus Omani bank payment gateways.</li>
+        <li>Built an international e-commerce platform with Aramex / DHL logistics, Visa, PayPal and Thawani payments and multi-currency checkout.</li>
+        <li>Delivered AI models for insurance risk scoring and fraud detection for Omani and regional clients.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Stats -->
-    <div class="highlight-row">
-        <div class="hl-item"><strong>20+</strong><span>Years Experience</span></div>
-        <div class="hl-item"><strong>200+</strong><span>Projects Delivered</span></div>
-        <div class="hl-item"><strong>50+</strong><span>Clients</span></div>
-        <div class="hl-item"><strong>10+</strong><span>Industries</span></div>
+  <div class="job featured">
+    <div class="when">Since 2015</div>
+    <div>
+      <h3>Lead Systems Analyst &amp; ERP Architect <span class="badge">Core focus</span></h3>
+      <p class="org">Custom ERP Programs <span>· BMS Company &amp; SBC · Iran and Oman</span></p>
+      <ul>
+        <li>Lead end-to-end systems analysis for bespoke ERP platforms: stakeholder workshops, as-is / to-be process mapping (BPMN), gap analysis and signed-off requirement specifications.</li>
+        <li>Design modular ERP architectures (finance &amp; general ledger, inventory &amp; warehousing, procurement, sales, HR &amp; payroll, production planning and project costing) on one multi-company data model.</li>
+        <li>Currently building a modern, modular ERP platform on <b>Next.js and TypeScript</b> (React, server-rendered UI, PostgreSQL) for multi-company operations and role-aware workflows.</li>
+        <li>Delivered earlier ERP generations in C# / ASP.NET Core on SQL Server and on Odoo with custom Python / OWL modules, with role-based access control, an approval-workflow engine, audit trails and reporting.</li>
+        <li>Run legacy data migration, user-acceptance testing, phased roll-outs and staff training; own post-go-live support and continuous improvement.</li>
+        <li>Integrate ERP with banks and payment gateways, e-commerce storefronts, shipping carriers and third-party systems via REST APIs.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Summary -->
-    <p class="summary">
-        Blockchain developer and AI architect with 20+ years of experience building scalable enterprise systems, decentralized products, and intelligent software across web, mobile, and desktop. Core member at Blockcore and Angor, founder and CEO of SBC (Senior BlockChain LLC) in Oman, with a strong track record in enterprise insurance platforms, international e-commerce, Bitcoin-native applications, and AI-powered business systems across the MENA region.
-    </p>
-
-    <!-- Technical Skills -->
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-box">
-            <h4>Programming Languages</h4>
-            <div class="tags">
-                <span class="tag">C#</span><span class="tag">Python</span><span class="tag">TypeScript</span>
-                <span class="tag">JavaScript</span><span class="tag">Kotlin</span><span class="tag">Swift</span>
-                <span class="tag">Rust</span><span class="tag">Go</span><span class="tag">Solidity</span>
-                <span class="tag">Dart</span><span class="tag">Java</span><span class="tag">C++</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Frontend &amp; Frameworks</h4>
-            <div class="tags">
-                <span class="tag cyan">React</span><span class="tag cyan">Next.js</span><span class="tag cyan">Angular</span>
-                <span class="tag cyan">Vue.js</span><span class="tag cyan">Blazor</span><span class="tag cyan">TailwindCSS</span>
-                <span class="tag cyan">Redux</span><span class="tag cyan">Nuxt.js</span><span class="tag cyan">Vite</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Backend &amp; APIs</h4>
-            <div class="tags">
-                <span class="tag green">ASP.NET Core</span><span class="tag green">Node.js</span><span class="tag green">NestJS</span>
-                <span class="tag green">Django</span><span class="tag green">FastAPI</span><span class="tag green">GraphQL</span>
-                <span class="tag green">SignalR</span><span class="tag green">gRPC</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Databases</h4>
-            <div class="tags">
-                <span class="tag amber">PostgreSQL</span><span class="tag amber">SQL Server</span><span class="tag amber">MongoDB</span>
-                <span class="tag amber">Redis</span><span class="tag amber">Supabase</span><span class="tag amber">Firebase</span>
-                <span class="tag amber">Elasticsearch</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Cloud &amp; DevOps</h4>
-            <div class="tags">
-                <span class="tag purple">Docker</span><span class="tag purple">Kubernetes</span><span class="tag purple">AWS</span>
-                <span class="tag purple">Azure</span><span class="tag purple">GCP</span><span class="tag purple">Terraform</span>
-                <span class="tag purple">GitHub Actions</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Mobile &amp; Desktop</h4>
-            <div class="tags">
-                <span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">.NET MAUI</span>
-                <span class="tag">Electron</span><span class="tag">Tauri</span><span class="tag">SwiftUI</span>
-                <span class="tag">WPF</span>
-            </div>
-        </div>
+  <div class="job">
+    <div class="when">Since 2022</div>
+    <div>
+      <h3>Core Member &amp; Lead Architect</h3>
+      <p class="org">Angor <span>· Decentralized crowdfunding on Bitcoin</span></p>
+      <ul>
+        <li>Designed and built a trustless crowdfunding protocol on Bitcoin with Nostr and Lightning Network integration.</li>
+        <li>Led system architecture, UI/UX, cryptographic implementation, documentation, branding and go-to-market; implemented PSBT-based smart escrow, decentralized storage and identity verification.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- AI & ML -->
-    <h2>AI &amp; Machine Learning</h2>
-    <div class="skills-grid">
-        <div class="skill-box">
-            <h4>Deep Learning</h4>
-            <div class="tags">
-                <span class="tag purple">TensorFlow</span><span class="tag purple">PyTorch</span><span class="tag purple">Keras</span>
-                <span class="tag purple">CNNs</span><span class="tag purple">Transformers</span><span class="tag purple">GANs</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>NLP &amp; LLMs</h4>
-            <div class="tags">
-                <span class="tag cyan">GPT Fine-tuning</span><span class="tag cyan">LangChain</span><span class="tag cyan">RAG</span>
-                <span class="tag cyan">Hugging Face</span><span class="tag cyan">BERT</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Computer Vision &amp; Data Science</h4>
-            <div class="tags">
-                <span class="tag green">OpenCV</span><span class="tag green">YOLO</span><span class="tag green">Scikit-learn</span>
-                <span class="tag green">Pandas</span><span class="tag green">XGBoost</span><span class="tag green">MLflow</span>
-            </div>
-        </div>
+  <div class="job">
+    <div class="when">Since 2018</div>
+    <div>
+      <h3>Core Member</h3>
+      <p class="org">Blockcore <span>· Open-source blockchain platform</span></p>
+      <ul>
+        <li>Build custom blockchains from scratch: consensus engines, full-node implementations, wallets and block explorers; developed decentralized identity, tokenization and P2P payment networks.</li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Blockchain -->
-    <h2>Blockchain &amp; Web3</h2>
-    <div class="skills-grid">
-        <div class="skill-box">
-            <h4>Custom Blockchain Dev</h4>
-            <div class="tags">
-                <span class="tag amber">Blockcore</span><span class="tag amber">PoS/PoW</span><span class="tag amber">Custom Chains</span>
-                <span class="tag amber">Full Node</span><span class="tag amber">Block Explorer</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Bitcoin &amp; Smart Contracts</h4>
-            <div class="tags">
-                <span class="tag">Bitcoin Core</span><span class="tag">Lightning</span><span class="tag">PSBT</span>
-                <span class="tag">Solidity</span><span class="tag">DeFi</span><span class="tag">Hardhat</span>
-            </div>
-        </div>
-        <div class="skill-box">
-            <h4>Identity &amp; Enterprise</h4>
-            <div class="tags">
-                <span class="tag green">Nostr</span><span class="tag green">DID</span><span class="tag green">Self-Sovereign ID</span>
-                <span class="tag green">Hyperledger</span><span class="tag green">KYC/AML</span>
-            </div>
-        </div>
+  <div class="job">
+    <div class="when">Since 2015</div>
+    <div>
+      <h3>Founder &amp; Owner</h3>
+      <p class="org">BMS Company <span>· Tehran, Iran</span></p>
+      <ul>
+        <li>Founded a software house delivering custom enterprise software, ERP solutions and IT consulting.</li>
+        <li>Built Iran’s online insurance platform integrating all major insurers and the Shaparak payment network; hired, trained and led multi-disciplinary teams.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="page-break"></div>
-
-    <!-- Professional Experience -->
-    <h2>Work Experience</h2>
-
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Founder &amp; CEO</span>
-            <span class="exp-date">2022 - Present</span>
-        </div>
-        <div class="exp-company">SBC (Senior BlockChain LLC) - Grade 1 Company, Muscat, Oman</div>
-        <ul class="exp-list">
-            <li>Founded and leading a Grade 1 blockchain and AI company in Oman specializing in enterprise blockchain solutions, AI-powered automation, and large-scale software architecture.</li>
-            <li>Architected the online insurance platform for Oman - integrated with CMA regulations, local insurers (Dhofar, National Life, Al Ahlia, Vision, Oman United), and Omani bank gateways.</li>
-            <li>Developed international e-commerce platform with Aramex/DHL shipping, Visa/PayPal/Thawani payments, and multi-currency support.</li>
-            <li>Built custom AI models for insurance risk scoring and fraud detection serving regional clients.</li>
-        </ul>
+  <div class="job">
+    <div class="when">Before 2018</div>
+    <div>
+      <h3>Project Manager</h3>
+      <p class="org">National Oil Company <span>· Iran</span></p>
+      <ul>
+        <li>Managed enterprise software projects for national energy infrastructure, including custom antivirus tooling and an ASP.NET content-management platform.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Core Member &amp; Lead Architect</span>
-            <span class="exp-date">2022 - Present</span>
-        </div>
-        <div class="exp-company">Angor - Decentralized Crowdfunding Platform</div>
-        <ul class="exp-list">
-            <li>Designed and developed a Bitcoin-based decentralized crowdfunding platform with Nostr protocol and Lightning Network integration.</li>
-            <li>Led system architecture, UI/UX design, cryptographic implementation, documentation, and go-to-market strategy.</li>
-            <li>Implemented PSBT-based smart escrow, decentralized storage, and blockchain identity verification.</li>
-        </ul>
+  <div class="job">
+    <div class="when">2008 to 2018</div>
+    <div>
+      <h3>Senior Software Developer</h3>
+      <p class="org">Freelance &amp; Contract <span>· Multiple clients</span></p>
+      <ul>
+        <li>Shipped 200+ web, mobile and desktop applications for fintech, healthcare, manufacturing and government clients, including CRM, inventory and analytics systems.</li>
+      </ul>
     </div>
+  </div>
+</section>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Core Member</span>
-            <span class="exp-date">2018 - Present</span>
-        </div>
-        <div class="exp-company">Blockcore - Open Source Blockchain Platform</div>
-        <ul class="exp-list">
-            <li>Core contributor building custom blockchains from scratch - consensus engines, full-node implementations, wallets, and explorers.</li>
-            <li>Developed decentralized identity, tokenization platforms, and P2P payment networks.</li>
-        </ul>
+<section class="keep">
+  <h2><i></i>Custom ERP: Analysis &amp; Engineering</h2>
+  <div class="erp">
+    <div class="steps">
+      <div><b>Discover</b>Interviews, workshops, document review</div>
+      <div><b>Model</b>BPMN as-is / to-be, ERD, gap analysis</div>
+      <div><b>Specify</b>SRS, user stories, acceptance criteria</div>
+      <div><b>Architect</b>Multi-company, RBAC, workflow, audit</div>
+      <div><b>Build</b>Next.js, TypeScript; earlier .NET, Odoo</div>
+      <div><b>Go live</b>Migration, UAT, roll-out, training</div>
     </div>
+    <dl class="kv">
+      <dt>Modules</dt><dd>Finance &amp; GL · Inventory &amp; Warehouse · Procurement · Sales &amp; CRM · HR &amp; Payroll · Manufacturing &amp; MRP · Projects &amp; Costing · BI &amp; Reporting</dd>
+      <dt>Capabilities</dt><dd>Multi-company &amp; multi-currency · role-based access · approval workflows · audit trail · configurable reports · bank, payment &amp; logistics integrations · legacy data migration</dd>
+      <dt>Analysis</dt><dd>BPMN 2.0 · UML · ERD / data modelling · use cases · user stories · gap analysis · SRS · UAT planning</dd>
+      <dt>Stack (now)</dt><dd>Next.js · TypeScript · React · Node.js · PostgreSQL · REST / GraphQL · Docker</dd>
+      <dt>Stack (earlier)</dt><dd>C# · ASP.NET Core · SQL Server · Angular · Python · Odoo (OWL, QWeb) · Redis</dd>
+    </dl>
+  </div>
+</section>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Founder &amp; Owner</span>
-            <span class="exp-date">2015 - Present</span>
-        </div>
-        <div class="exp-company">BMS Company - Tehran, Iran</div>
-        <ul class="exp-list">
-            <li>Founded a technology company delivering custom software, Odoo ERP solutions, and IT consulting for enterprise clients.</li>
-            <li>Built the Iranian online insurance platform integrating all major providers and Shaparak payment infrastructure.</li>
-            <li>Delivered custom Odoo ERP modules for manufacturing, healthcare, retail, and real estate sectors.</li>
-        </ul>
-    </div>
+<section>
+  <h2><i></i>Selected Projects</h2>
+  <div class="projects">
+    <div class="project"><h3>ERP Platform on Next.js</h3><p>Modern, modular ERP in active development, building on earlier bespoke ERP generations in C# / .NET.</p><small>Next.js · TypeScript · PostgreSQL</small></div>
+    <div class="project"><h3>Enterprise ERP on Odoo</h3><p>Custom modules for manufacturing, healthcare, real estate and retail: HR, CRM, accounting and supply chain.</p><small>Python · Odoo · PostgreSQL</small></div>
+    <div class="project"><h3>Oman Online Insurance Platform</h3><p>CMA-compliant platform with leading Omani insurers: real-time quotes, policy issuance, claims and bank gateways.</p><small>Next.js · PostgreSQL · CMA</small></div>
+    <div class="project"><h3>Angor Bitcoin Crowdfunding</h3><p>Bitcoin-native crowdfunding with Nostr, Lightning and PSBT-based smart escrow.</p><small>Bitcoin · Nostr · Lightning</small></div>
+    <div class="project"><h3>International E-Commerce</h3><p>Multi-vendor commerce with Aramex / DHL / FedEx, Visa / PayPal / Thawani, multi-currency and GCC tax automation.</p><small>Next.js · Aramex · PayPal</small></div>
+    <div class="project"><h3>AI Business Intelligence</h3><p>Risk, fraud, churn and claims models; NLP pipelines and recommendation engines.</p><small>TensorFlow · PyTorch · MLOps</small></div>
+  </div>
+</section>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Project Manager</span>
-            <span class="exp-date">Before 2018</span>
-        </div>
-        <div class="exp-company">National Oil Company - Iran</div>
-        <ul class="exp-list">
-            <li>Managed enterprise software projects including antivirus solutions and ASP.NET CMS platform for national energy infrastructure.</li>
-        </ul>
-    </div>
+<section>
+  <h2><i></i>Skills, Education &amp; Languages</h2>
+  <dl class="skills">
+    <dt>Programming</dt><dd>C#, Python, TypeScript, JavaScript, Go, Rust, Kotlin, Swift, Dart, Java, C++, Solidity</dd>
+    <dt>ERP</dt><dd>Custom ERP architecture, Next.js ERP, Odoo (Python ORM, OWL, QWeb), BPMN, UML, data migration</dd>
+    <dt>Backend</dt><dd>ASP.NET Core, Node.js, NestJS, Django, FastAPI, Express, GraphQL, gRPC, SignalR</dd>
+    <dt>Frontend</dt><dd>React, Next.js, Angular, Vue.js, Nuxt.js, Blazor, TailwindCSS, Redux, Vite</dd>
+    <dt>Data</dt><dd>PostgreSQL, SQL Server, MongoDB, Redis, Elasticsearch, Supabase, Firebase</dd>
+    <dt>Cloud &amp; DevOps</dt><dd>Docker, Kubernetes, AWS, Azure, GCP, Terraform, GitHub Actions, Jenkins, Nginx</dd>
+    <dt>AI &amp; ML</dt><dd>PyTorch, TensorFlow, LLM fine-tuning, RAG, LangChain, Hugging Face, OpenCV, YOLO, MLflow</dd>
+    <dt>Blockchain</dt><dd>Bitcoin Core, Lightning, PSBT, Taproot, Nostr, DID / VC, Blockcore, Solidity, Hyperledger</dd>
+    <dt>Mobile &amp; Desktop</dt><dd>React Native, Flutter, .NET MAUI, SwiftUI, Jetpack Compose, Electron, Tauri, WPF</dd>
+    <dt>Design</dt><dd>Figma, Adobe XD, Photoshop, Illustrator, After Effects, Premiere Pro, brand identity</dd>
+    <dt>Education</dt><dd><b>Bachelor’s Degree in Mathematics &amp; Computer Science</b></dd>
+    <dt>Languages</dt><dd>Persian (Farsi): native · English: professional · Arabic: basic</dd>
+  </dl>
+</section>
 
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-role">Senior Software Developer</span>
-            <span class="exp-date">2008 - 2018</span>
-        </div>
-        <div class="exp-company">Freelance &amp; Contract</div>
-        <ul class="exp-list">
-            <li>Created 200+ applications across mobile, web, and desktop for fintech, healthcare, manufacturing, and government clients.</li>
-        </ul>
-    </div>
-
-    <!-- Key Projects -->
-    <h2>Selected Work</h2>
-    <div class="projects-grid">
-        <div class="project-box">
-            <h3>Angor - Decentralized Crowdfunding</h3>
-            <p>Bitcoin-based platform with Nostr, Lightning, and PSBT smart escrow for trustless investment.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag">Bitcoin</span><span class="tag cyan">Nostr</span><span class="tag amber">Lightning</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>Insurance Platform - Oman</h3>
-            <p>CMA-compliant system with Omani insurers, real-time quotes, claims tracking, and Omani bank gateways.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag green">Next.js</span><span class="tag amber">PostgreSQL</span><span class="tag purple">CMA</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>Insurance Platform - Iran</h3>
-            <p>All Iranian insurers integrated, multiple products, Shaparak gateway, Bimeh Markazi APIs.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag cyan">ASP.NET</span><span class="tag amber">SQL Server</span><span class="tag green">Shaparak</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>International E-Commerce</h3>
-            <p>Multi-vendor with Aramex/DHL/FedEx, Visa/PayPal/Thawani, multi-currency, GCC tax automation.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag amber">Next.js</span><span class="tag">Aramex</span><span class="tag purple">PayPal</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>SeniorBlockchain Identity</h3>
-            <p>Decentralized identity with TrustPulse scoring, verifiable credentials on Nostr and Bitcoin.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag purple">DID</span><span class="tag green">Nostr</span><span class="tag">Web3</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>Custom Blockchain Networks</h3>
-            <p>Multiple chains from scratch with Blockcore - consensus, full nodes, wallets, explorers, staking.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag amber">C#</span><span class="tag">Blockcore</span><span class="tag green">PoS</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>Enterprise ERP (Odoo)</h3>
-            <p>Custom Python modules for manufacturing, healthcare, real estate, retail - HR, CRM, accounting.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag green">Python</span><span class="tag amber">Odoo</span><span class="tag">PostgreSQL</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>AI Business Intelligence</h3>
-            <p>ML models for insurance risk, fraud detection, churn prediction, NLP pipelines, recommendation engines.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag purple">TensorFlow</span><span class="tag green">NLP</span><span class="tag cyan">MLOps</span>
-            </div>
-        </div>
-        <div class="project-box">
-            <h3>Tokenize - Asset Tokenization</h3>
-            <p>Fractional ownership of real-world assets on Bitcoin/Nostr with compliance-first architecture.</p>
-            <div class="tags" style="margin-top:4pt">
-                <span class="tag">Bitcoin</span><span class="tag purple">RWA</span><span class="tag cyan">React</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Education & Languages -->
-    <div class="two-col">
-        <div>
-            <h2>Education</h2>
-            <div class="skill-box">
-                <h3>Bachelor's Degree - Mathematics &amp; Computer Science</h3>
-                <p>Algorithms, data structures, mathematical modeling, computational theory - foundation for AI/ML and blockchain cryptography.</p>
-            </div>
-        </div>
-        <div>
-            <h2>Languages</h2>
-            <div class="skill-box">
-                <div style="margin-bottom:8pt">
-                    <div style="display:flex;justify-content:space-between"><strong style="font-size:8.5pt">Persian (Farsi)</strong><span style="font-size:7pt;color:#059669">Native</span></div>
-                    <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-                </div>
-                <div style="margin-bottom:8pt">
-                    <div style="display:flex;justify-content:space-between"><strong style="font-size:8.5pt">English</strong><span style="font-size:7pt;color:#3b82f6">Professional</span></div>
-                    <div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div>
-                </div>
-                <div>
-                    <div style="display:flex;justify-content:space-between"><strong style="font-size:8.5pt">Arabic</strong><span style="font-size:7pt;color:#f59e0b">Basic</span></div>
-                    <div class="lang-bar"><div class="lang-fill" style="width:30%"></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Odoo ERP -->
-    <h2>Odoo ERP Development</h2>
-    <div class="skills-grid" style="grid-template-columns:1fr 1fr 1fr">
-        <div class="skill-box no-break">
-            <h4>Custom Module Architecture</h4>
-            <p>Python ORM models, business logic, automated workflows, XML views, QWeb reports, JavaScript/OWL components, and PostgreSQL optimization.</p>
-        </div>
-        <div class="skill-box no-break">
-            <h4>Industry-Specific Solutions</h4>
-            <p>Manufacturing, healthcare, construction, education, real estate, retail, HR, CRM, accounting, and operational automation.</p>
-        </div>
-        <div class="skill-box no-break">
-            <h4>Integration &amp; Migration</h4>
-            <p>REST API integration, third-party sync, data migration, payment gateways, e-commerce integration, and performance tuning.</p>
-        </div>
-    </div>
-
-    <!-- Design -->
-    <h2>Design &amp; Creative</h2>
-    <div class="skills-grid">
-        <div class="skill-box">
-            <h4>UI/UX &amp; Branding</h4>
-            <div class="tags"><span class="tag">Figma</span><span class="tag">Adobe XD</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span></div>
-        </div>
-        <div class="skill-box">
-            <h4>Motion &amp; Video</h4>
-            <div class="tags"><span class="tag purple">After Effects</span><span class="tag purple">Premiere Pro</span><span class="tag purple">Motion Graphics</span></div>
-        </div>
-        <div class="skill-box">
-            <h4>Print &amp; Graphics</h4>
-            <div class="tags"><span class="tag cyan">CorelDRAW</span><span class="tag cyan">InDesign</span><span class="tag cyan">Visual Identity</span></div>
-        </div>
-    </div>
-
-    <h2>Contact</h2>
-    <div class="skill-box no-break">
-        <div class="contact-row" style="justify-content:flex-start;gap:14pt;margin-bottom:6pt">
-            <span>&#9993; miladsoft@yahoo.com</span>
-            <span>&#9742; +968 9120 0634</span>
-            <span>&#9872; Muscat, Oman</span>
-        </div>
-        <p style="font-size:8pt;color:#64748b;line-height:1.4">Milad Raeisi - Blockchain Developer, AI Architect, and founder of SBC in Oman. Core member at Blockcore and Angor.</p>
-    </div>
-
+</main>
 </body>
 </html>
